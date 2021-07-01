@@ -1,0 +1,79 @@
+@media (max-width: 1200px) {
+  .header {
+    &__logo {
+      &-icon {
+        width: 35px;
+        height: 35px;
+      }
+      &-text {
+        font-size: 22px;
+        span {
+          font-size: 26px;
+        }
+      }
+    }
+    &__jivo {
+      margin-bottom: 13px;
+
+    }
+    &__menu {
+      &-item {
+        font-size: 16px;
+      }
+    }
+    &__button {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .burger {
+    &-btn {
+      display: block;
+    }
+  }
+  .header {
+    &__col {
+      &-first {
+        display: none;
+      }
+    }
+    &__button {
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__button {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    &__contacts {
+      display: none;
+    }
+    &__button {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    &__button {
+      padding: 12px 25px;
+      &-text {
+        display: none;
+      }
+      &-icon {
+        display: block;
+      }
+    }
+  }
+}

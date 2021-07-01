@@ -1,6 +1,30 @@
 @import "variables";
 
+body {
+  font-family: 'Open Sans', sans-serif, --apple-system;
+  color: $main-text-color;
+}
 
+.line-break {
+  display: block;
+}
 
+.text {
+  &_accent {
+    color: $active-color;
+  }
+}
 
+.button {
+  padding: 8px 20px;
+  font-size: 18px;
+  color: $alt-text-color;
+  background-color: $active-color;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+@import "burger";
+@import "header";
 @import "media";
