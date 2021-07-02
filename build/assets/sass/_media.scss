@@ -25,6 +25,11 @@
       font-size: 16px;
     }
   }
+  .features {
+    &__card {
+      min-height: 155px;
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -46,6 +51,30 @@
   .promo {
     &__collage {
       right: -160px;
+    }
+  }
+  .features {
+    &__wrap {
+      flex-wrap: wrap;
+    }
+    &__card {
+      width: 48%;
+      min-height: 130px;
+      &:not(:last-child) {
+        margin-right: unset;
+      }
+      &:nth-child(odd) {
+        margin-right: 2%;
+      }
+      &:nth-child(-n+2) {
+        margin-bottom: 40px;
+      }
+      &-title {
+        font-size: 18px;
+      }
+      &-text {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -83,6 +112,18 @@
       position: absolute;
       right: -160px;
       bottom: -60px;
+    }
+  }
+  .features {
+    &__card {
+      padding-right: 10px;
+      width: 47%;
+      &-title {
+        font-size: 16px;
+      }
+      &-text {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -128,6 +169,37 @@
       left: 50%;
       bottom: -30px;
       transform: translateX(-53%);
+    }
+  }
+  .features {
+    padding: 60px 0;
+    &__card {
+      &:nth-child(odd) {
+        margin-right: auto;
+      }
+       &:not(:last-child) {
+         margin-right: auto;
+         margin-bottom: 30px;
+       }
+      margin-left: auto;
+      margin-right: auto;
+      padding: 25px 15px 20px;
+      width: 95%;
+      min-height: unset;
+      &-icon {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &-title {
+        text-align: center;
+        &:after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      &-text {
+        text-align: center;
+      }
     }
   }
 }

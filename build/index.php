@@ -100,5 +100,56 @@
 			</picture>
 		</div>
 	</section>
+
+	<section class="prices">
+		<section class="features">
+			<div class="container features__wrap">
+				<div class="features__card">
+					<svg class="features__card-icon">
+						<use xlink:href="./assets/stack/sprite.svg#delivery-truck"></use>
+					</svg>
+					<h3 class="features__card-title">
+						<span class="text_accent">Бесплатный</span> выезд
+					</h3>
+					<div class="features__card-text">
+						Наш мастер бесплатно приедет к вам в течении 20 минут
+					</div>
+				</div>
+				<div class="features__card">
+					<svg class="features__card-icon">
+						<use xlink:href="./assets/stack/sprite.svg#money-bag"></use>
+					</svg>
+					<h3 class="features__card-title">
+						<span class="text_accent">Честные</span> цены
+					</h3>
+					<div class="features__card-text">
+						Мы не делаем никаких наценок на наши услуги
+					</div>
+				</div>
+				<div class="features__card">
+					<svg class="features__card-icon">
+						<use xlink:href="./assets/stack/sprite.svg#guarantee"></use>
+					</svg>
+					<h3 class="features__card-title">
+						<span class="text_accent">Пожизненная</span> гарантия
+					</h3>
+					<div class="features__card-text">
+						Наш мастер бесплатно приедет к вам в течении 20 минут
+					</div>
+				</div>
+				<div class="features__card">
+					<svg class="features__card-icon">
+						<use xlink:href="./assets/stack/sprite.svg#magnifying-glass"></use>
+					</svg>
+					<h3 class="features__card-title">
+						<span class="text_accent">Бесплатная</span> диагностика
+					</h3>
+					<div class="features__card-text">
+						Наш мастер бесплатно приедет к вам в течении 20 минут
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
 </body>
 </html>
