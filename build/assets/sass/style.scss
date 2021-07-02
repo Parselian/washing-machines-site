@@ -39,6 +39,12 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  border: 1px solid $active-color;
+  transition: .2s;
+  &:hover {
+    color: $active-color;
+    background-color: $alt-text-color;
+  }
   &_alt {
     padding: 6px 16px;
     color: $inactive-color;
@@ -72,6 +78,8 @@ body {
 @import "burger";
 @import "header";
 @import "promo";
+@import "prices";
 @import "features";
 @import "pricelist";
+@import "reviews";
 @import "media";

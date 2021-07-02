@@ -1,0 +1,172 @@
+.reviews {
+  padding-bottom: 60px;
+  padding-top: 20px;
+  position: relative;
+  &__bg {
+    position: absolute;
+    top: -140px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: $accent-bg-color;
+    clip-path: polygon(0 6%, 100% 20%, 100% 100%, 0% 100%);
+  }
+  &__slide {
+    &r {
+      position: relative;
+      margin-bottom: 30px;
+      background-color: #ffffff;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      &-arrow {
+        &-wrap {
+          position: absolute;
+          top: 50%;
+          z-index: 1;
+          width: 30px;
+          height: 30px;
+          border: 1px solid $inactive-color;
+          transform: translateY(-50%);
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: .2s;
+          &:hover {
+            border-color: $active-color;
+            background-color: $active-color;
+            .reviews {
+              &__slide {
+                &r {
+                  &-arrow {
+                    fill: $alt-text-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        min-width: 10px;
+        min-height: 10px;
+        transform: translate(-50%, -50%);
+        fill: $inactive-color;
+        transition: .2s;
+        &_left {
+          left: 40px;
+        }
+        &_right {
+          right: 40px;
+          transform-origin: center;
+          transform: scale(-1, 1) translateY(-50%);
+        }
+      }
+      &-dots {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        &-item {
+          width: 10px;
+          height: 10px;
+          background-color: $slider-dots-color;
+          -webkit-border-radius: 100px;
+          -moz-border-radius: 100px;
+          border-radius: 100px;
+          &_active {
+            background-color: $active-color;
+          }
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+    padding: 40px 90px 70px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.15);
+    &-person {
+      &-img {
+        margin-bottom: 5px;
+        width: 75px;
+        height: 75px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+      }
+      &-name {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      &-service {
+        margin-bottom: 35px;
+        font-size: 16px;
+        font-weight: 300;
+      }
+      &-rating {
+        display: flex;
+        align-items: center;
+        &-text {
+          margin-right: 35px;
+          font-size: 16px;
+          font-weight: 300;
+        }
+        &-number {
+          position: relative;
+          z-index: 4;
+          font-size: 24px;
+          font-weight: 600;
+          color: $alt-text-color;
+          &:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            content: '';
+            width: 70px;
+            height: 43px;
+            transform: translate(-50%, -50%);
+            background-color: $active-color;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+    &-info {
+      width: 75%;
+      &-text {
+        margin-bottom: 30px;
+        width: 80%;
+        font-size: 16px;
+      }
+      &-gallery {
+        display: flex;
+        justify-content: flex-start;
+        &-img {
+          display: block;
+          width: 180px;
+          margin-right: 30px;
+          &:not(:last-child) {
+          }
+        }
+      }
+    }
+  }
+}

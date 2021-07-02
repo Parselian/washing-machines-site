@@ -25,6 +25,15 @@
       font-size: 16px;
     }
   }
+  .prices {
+    &__bg {
+      width: 61%;
+      clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%);
+      &-img {
+        right: -20%;
+      }
+    }
+  }
   .features {
     &__card {
       min-height: 155px;
@@ -82,6 +91,14 @@
       }
     }
   }
+  .prices {
+    &__bg {
+      &-img {
+        right: -50%;
+        min-width: 700px;
+      }
+    }
+  }
   .pricelist {
     &__card {
       margin-bottom: 20px;
@@ -91,6 +108,53 @@
       }
       &:not(:nth-child(3n)) {
         margin-right: 1%;
+      }
+    }
+  }
+  .reviews {
+    &__bg {
+      clip-path: polygon(0 6%, 100% 13%, 100% 100%, 0% 100%);
+    }
+    &__slide {
+      &r {
+        &-arrow {
+          &_left {
+            left: 20px;
+          }
+          &_right {
+            right: 20px;
+          }
+        }
+      }
+      padding: 40px 60px 50px;
+      flex-direction: column;
+      &-person {
+        margin-bottom: 25px;
+        padding-bottom: 14px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $inactive-color;
+        &-img {
+          margin-right: 15px;
+        }
+        &-col {
+          //align-self: flex-start;
+          margin-right: 160px;
+        }
+        &-service {
+          margin-bottom: 0;
+        }
+        &-rating {
+          margin-right: 18px;
+        }
+      }
+      &-info {
+        width: 100%;
+        &-text {
+          text-align: center;
+          width: 100%;
+        }
       }
     }
   }
@@ -131,6 +195,11 @@
       bottom: -60px;
     }
   }
+  .prices {
+    &__bg {
+      clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
   .features {
     &__card {
       padding-right: 10px;
@@ -145,6 +214,11 @@
   }
   .pricelist {
     &__card {
+      &s {
+        margin-bottom: 30px;
+      }
+      margin-bottom: 10px;
+      padding: 10px 15px;
       width: 48%;
       &:not(:nth-child(3n)) {
         margin-right: unset;
@@ -154,6 +228,23 @@
       }
       &:last-child {
         margin-right: 0;
+      }
+    }
+  }
+  .reviews {
+    &__bg {
+      clip-path: polygon(0 6%, 100% 11%, 100% 100%, 0% 100%);
+    }
+    &__slide {
+      &-person {
+        &-col {
+          margin-right: 80px;
+        }
+        &-rating {
+          &-text {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -202,6 +293,11 @@
       transform: translateX(-53%);
     }
   }
+  .prices {
+    &__bg {
+      display: none;
+    }
+  }
   .features {
     padding: 60px 0;
     &__card {
@@ -234,6 +330,7 @@
     }
   }
   .pricelist {
+    padding-bottom: 60px;
     &__card {
       &s {
         margin-bottom: 40px;
@@ -243,6 +340,7 @@
       padding: 10px 15px;
       border: none;
       border-bottom: 1px solid $inactive-color;
+      background-color: rgba(255, 255, 255, 0.6);
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       border-radius: 0;
@@ -273,6 +371,37 @@
               fill: $active-color;
             }
           }
+        }
+      }
+    }
+  }
+  .reviews {
+    padding-top: 0;
+    &__bg {
+      top: -120px;
+    }
+    &__slide {
+      padding: 40px 30px;
+      &r {
+        &-arrow {
+          &-wrap {
+            top: 30%;
+          }
+        }
+      }
+      &-person {
+        flex-direction: column;
+        &-col {
+          margin-right: 0;
+          text-align: center;
+        }
+        &-img {
+          margin-right: 0;
+        }
+        &-rating {
+          position: absolute;
+          top: -10px;
+          right: -10px;
         }
       }
     }
@@ -308,6 +437,11 @@
   .promo {
     &__title {
       font-size: 33px;
+    }
+  }
+  .reviews {
+    &__bg {
+      clip-path: polygon(0 6%, 100% 9%, 100% 100%, 0% 100%);
     }
   }
 }

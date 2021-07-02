@@ -1,4 +1,5 @@
 .pricelist {
+  padding-bottom: 100px;
   &__card {
     &s {
       display: flex;
@@ -7,12 +8,13 @@
       flex-wrap: wrap;
     }
 
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 25px 30px;
     display: flex;
     align-items: center;
     width: 24%;
     color: $inactive-color;
+    background-color: $alt-text-color;
     border: 1px solid $inactive-color;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -57,6 +59,7 @@
     &:hover {
       color: $active-color;
       border-color: $active-color;
+      background-color: $alt-text-color;
       .pricelist {
         &__card {
           &-icon {
@@ -68,6 +71,7 @@
   }
   &__unroll {
     margin: auto;
+    margin-bottom: 50px;
     padding: 12px 30px;
     font-size: 20px;
     display: block;
