@@ -30,6 +30,11 @@
       min-height: 155px;
     }
   }
+  .pricelist {
+    &__card {
+      padding: 20px 15px;
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -74,6 +79,18 @@
       }
       &-text {
         font-size: 16px;
+      }
+    }
+  }
+  .pricelist {
+    &__card {
+      margin-bottom: 20px;
+      width: 32%;
+      &:not(:nth-child(4n)) {
+        margin-right: unset;
+      }
+      &:not(:nth-child(3n)) {
+        margin-right: 1%;
       }
     }
   }
@@ -123,6 +140,20 @@
       }
       &-text {
         font-size: 14px;
+      }
+    }
+  }
+  .pricelist {
+    &__card {
+      width: 48%;
+      &:not(:nth-child(3n)) {
+        margin-right: unset;
+      }
+      &:not(:nth-child(2n)) {
+        margin-right: 2%;
+      }
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
@@ -199,6 +230,50 @@
       }
       &-text {
         text-align: center;
+      }
+    }
+  }
+  .pricelist {
+    &__card {
+      &s {
+        margin-bottom: 40px;
+      }
+      margin-bottom: 0;
+      width: 100%;
+      padding: 10px 15px;
+      border: none;
+      border-bottom: 1px solid $inactive-color;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      &:not(:nth-child(2n)) {
+        margin-right: 0;
+      }
+      &-icon {
+        display: none;
+      }
+      &-info {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+      }
+      &-title {
+        margin-bottom: 0;
+      }
+      &:hover {
+        border-color: $inactive-color;
+      }
+      &_active {
+        background-color: $alt-text-color;
+        border-color: $active-color;
+        color: $active-color;
+        .pricelist {
+          &__card {
+            &-icon {
+              fill: $active-color;
+            }
+          }
+        }
       }
     }
   }

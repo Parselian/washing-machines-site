@@ -8,6 +8,9 @@ body {
 .text_accent {
   color: #A3CD39; }
 
+.text_semibold {
+  font-weight: 600; }
+
 .text_bold {
   font-weight: 700; }
 
@@ -42,6 +45,12 @@ body {
       color: #FFF;
       background-color: #A3CD39;
       border-color: #A3CD39; }
+
+.section__title {
+  margin-bottom: 50px;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center; }
 
 .burger-btn {
   cursor: pointer;
@@ -283,6 +292,60 @@ body {
     .features__card-text {
       font-size: 14px; }
 
+.pricelist__card {
+  margin-bottom: 30px;
+  padding: 25px 30px;
+  display: flex;
+  align-items: center;
+  width: 24%;
+  color: #8F8F8F;
+  border: 1px solid #8F8F8F;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  transition: .2s;
+  cursor: pointer; }
+  .pricelist__cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+  .pricelist__card_active {
+    color: #FFF;
+    background-color: #A3CD39;
+    border-color: #A3CD39; }
+    .pricelist__card_active .pricelist__card-icon {
+      fill: #FFF; }
+  .pricelist__card:not(:nth-child(4n)) {
+    margin-right: 1%; }
+  .pricelist__card:last-child {
+    margin-right: 0; }
+  .pricelist__card-icon {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    fill: #8F8F8F;
+    transition: .2s; }
+  .pricelist__card-title {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 18px; }
+  .pricelist__card-price {
+    font-size: 16px; }
+  .pricelist__card:hover {
+    color: #A3CD39;
+    border-color: #A3CD39; }
+    .pricelist__card:hover .pricelist__card-icon {
+      fill: #A3CD39; }
+
+.pricelist__unroll {
+  margin: auto;
+  padding: 12px 30px;
+  font-size: 20px;
+  display: block; }
+
 @media (max-width: 1200px) {
   .header__logo-icon {
     width: 35px;
@@ -298,7 +361,9 @@ body {
   .header__button {
     font-size: 16px; }
   .features__card {
-    min-height: 155px; } }
+    min-height: 155px; }
+  .pricelist__card {
+    padding: 20px 15px; } }
 
 @media (max-width: 992px) {
   .burger-btn {
@@ -323,7 +388,14 @@ body {
     .features__card-title {
       font-size: 18px; }
     .features__card-text {
-      font-size: 16px; } }
+      font-size: 16px; }
+  .pricelist__card {
+    margin-bottom: 20px;
+    width: 32%; }
+    .pricelist__card:not(:nth-child(4n)) {
+      margin-right: unset; }
+    .pricelist__card:not(:nth-child(3n)) {
+      margin-right: 1%; } }
 
 @media (max-width: 768px) {
   .header__button {
@@ -357,7 +429,15 @@ body {
     .features__card-title {
       font-size: 16px; }
     .features__card-text {
-      font-size: 14px; } }
+      font-size: 14px; }
+  .pricelist__card {
+    width: 48%; }
+    .pricelist__card:not(:nth-child(3n)) {
+      margin-right: unset; }
+    .pricelist__card:not(:nth-child(2n)) {
+      margin-right: 2%; }
+    .pricelist__card:last-child {
+      margin-right: 0; } }
 
 @media (max-width: 767px) {
   .promo__common-item:nth-child(2), .promo__common-item:nth-child(5), .promo__common-item:nth-child(7) {
@@ -408,7 +488,36 @@ body {
           left: 50%;
           transform: translateX(-50%); }
       .features__card-text {
-        text-align: center; } }
+        text-align: center; }
+  .pricelist__card {
+    margin-bottom: 0;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-bottom: 1px solid #8F8F8F;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0; }
+    .pricelist__cards {
+      margin-bottom: 40px; }
+    .pricelist__card:not(:nth-child(2n)) {
+      margin-right: 0; }
+    .pricelist__card-icon {
+      display: none; }
+    .pricelist__card-info {
+      width: 100%;
+      justify-content: space-between;
+      display: flex; }
+    .pricelist__card-title {
+      margin-bottom: 0; }
+    .pricelist__card:hover {
+      border-color: #8F8F8F; }
+    .pricelist__card_active {
+      background-color: #FFF;
+      border-color: #A3CD39;
+      color: #A3CD39; }
+      .pricelist__card_active .pricelist__card-icon {
+        fill: #A3CD39; } }
 
 @media (max-width: 480px) {
   .header__contacts {
