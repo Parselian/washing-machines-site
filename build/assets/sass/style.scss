@@ -13,6 +13,19 @@ body {
   &_accent {
     color: $active-color;
   }
+  &_bold {
+    font-weight: 700;
+  }
+}
+
+.form {
+  &__input {
+    padding: 9px 20px;
+    border: 1px solid $inactive-color;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
 }
 
 .button {
@@ -23,8 +36,28 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  &_alt {
+    padding: 6px 16px;
+    color: $inactive-color;
+    background-color: #fff;
+    border: 1px solid $inactive-color;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    transition: .2s;
+    &:hover {
+      color: $active-color;
+      border-color: $active-color;
+    }
+    &-active {
+      color: $alt-text-color;
+      background-color: $active-color;
+      border-color: $active-color;
+    }
+  }
 }
 
 @import "burger";
 @import "header";
+@import "promo";
 @import "media";
