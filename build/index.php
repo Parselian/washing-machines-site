@@ -150,6 +150,97 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="pricelist">
+			<div class="container pricelist__wrap">
+				<h2 class="section__title">Цены на ремонт</h2>
+
+				<div class="pricelist__cards">
+					<div class="pricelist__card">
+						<svg class="pricelist__card-icon">
+							<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
+						</svg>
+						<div class="pricelist__card-info">
+							<div class="pricelist__card-title">Пачкает вещи</div>
+							<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						</div>
+					</div>
+					<div class="pricelist__card">
+						<svg class="pricelist__card-icon">
+							<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
+						</svg>
+						<div class="pricelist__card-info">
+							<div class="pricelist__card-title">Пачкает вещи</div>
+							<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						</div>
+					</div>
+					<div class="pricelist__card pricelist__card_active">
+						<svg class="pricelist__card-icon">
+							<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
+						</svg>
+						<div class="pricelist__card-info">
+							<div class="pricelist__card-title">Пачкает вещи</div>
+							<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						</div>
+					</div>
+					<div class="pricelist__card">
+						<svg class="pricelist__card-icon">
+							<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
+						</svg>
+						<div class="pricelist__card-info">
+							<div class="pricelist__card-title">Пачкает вещи</div>
+							<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						</div>
+					</div>
+					<div class="pricelist__card">
+						<svg class="pricelist__card-icon">
+							<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
+						</svg>
+						<div class="pricelist__card-info">
+							<div class="pricelist__card-title">Пачкает вещи</div>
+							<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						</div>
+					</div>
+					<div class="pricelist__card">
+						<svg class="pricelist__card-icon">
+							<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
+						</svg>
+						<div class="pricelist__card-info">
+							<div class="pricelist__card-title">Пачкает вещи</div>
+							<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						</div>
+					</div>
+					<div class="pricelist__card">
+						<svg class="pricelist__card-icon">
+							<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
+						</svg>
+						<div class="pricelist__card-info">
+							<div class="pricelist__card-title">Пачкает вещи</div>
+							<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						</div>
+					</div>
+					<div class="pricelist__card">
+						<svg class="pricelist__card-icon">
+							<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
+						</svg>
+						<div class="pricelist__card-info">
+							<div class="pricelist__card-title">Пачкает вещи</div>
+							<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						</div>
+					</div>
+					<div class="pricelist__card">
+						<svg class="pricelist__card-icon">
+							<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
+						</svg>
+						<div class="pricelist__card-info">
+							<div class="pricelist__card-title">Пачкает вещи</div>
+							<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						</div>
+					</div>
+				</div>
+				<button class="button pricelist__unroll">Показать всё</button>
+			</div>
+		</section>
 	</section>
 </body>
 </html>
