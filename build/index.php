@@ -92,7 +92,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 			<button class="button button_alt promo__common-item" value="Не греет воду">Не греет воду</button>
 		</div>
 		<form action="#" class="form promo__form">
-			<input type="text" name="user_phone" class="form__input promo__form-input" placeholder="Ваш телефон:">
+			<input type="text" name="user_phone" class="form__input promo__form-input" placeholder="Ваш телефон:" required>
 			<button class="button promo__form-button">Вызвать мастера</button>
 		</form>
 		<picture>
@@ -319,6 +319,25 @@ require_once(__DIR__ . '/assets/configs/config.php');
 			<li class="reviews__slider-dots-item"></li>
 		</ul>
 	</div>
+
+	<section class="advantage-block">
+		<div class="container advantage-block__wrap">
+			<div class="advantage-block__suptitle">Новым клиентам</div>
+			<h3 class="advantage-block__title">Скидка 20%</h3>
+			<div class="advantage-block__subtitle">
+				Вы у нас впервые? Оставьте заявку и
+				<span class="line-break">получите скидку 20% на первый ремонт!</span>
+			</div>
+			<form action="" class="form advantage-block__form">
+				<input type="text" name="user_phone" class="form__input advantage-block__form-input" placeholder="Ваш телефон:" required>
+				<button class="button advantage-block__form-button">Заказать ремонт</button>
+				<div class="form__footnote">
+					Нажимая на кнопку "Заказать ремонт" я соглашаюсь с
+					<a href="#" class="form__footnote-link">политикой обработки персональных данных</a>
+				</div>
+			</form>
+		</div>
+	</section>
 </section>
 </body>
 </html>
