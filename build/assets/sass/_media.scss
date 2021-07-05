@@ -54,6 +54,24 @@
       max-width: 810px;
     }
   }
+  .team {
+    &__card {
+      width: 48%;
+      max-width: 290px;
+      &-img {
+        width: 150px;
+      }
+      &-title, &-job, &-year {
+        margin-left: 90px;
+      }
+      &-year {
+        margin-bottom: 30px;
+      }
+      &-count {
+        margin-left: 34px;
+      }
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -174,6 +192,33 @@
       transform: translateX(-50%);
     }
   }
+  .team {
+    &__card {
+      width: 48%;
+      max-width: 100%;
+      &:not(:nth-child(3n)) {
+        margin-right: unset;
+      }
+      &:not(:nth-last-child(-n+3)) {
+        margin-bottom: unset;
+      }
+      &:not(:nth-child(2n)) {
+        margin-right: 3%;
+      }
+      &:not(:nth-last-child(-n+2)) {
+        margin-bottom: 3%;
+      }
+      &-img {
+        width: 170px;
+      }
+      &-title, &-job, &-year {
+        margin-left: 120px;
+      }
+      &-count {
+        margin-left: 65px;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -274,6 +319,27 @@
       }
       &__img {
         display: none;
+      }
+    }
+  }
+  .team {
+    &__card {
+      &-img {
+        left: 50%;
+        top: 10px;
+        width: 90px;
+        transform: translateX(-50%);
+      }
+      &-info {
+        margin-top: 85px;
+      }
+      &-title, &-job, &-year {
+        text-align: center;
+        margin-left: 0px;
+      }
+      &-count {
+        margin: auto;
+        font-size: 15px;
       }
     }
   }
@@ -453,6 +519,42 @@
       }
     }
   }
+  .team {
+    &__card {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 360px;
+      &:not(:nth-child(2n)), &:not(:nth-child(3n))  {
+        margin-right: auto;
+      }
+      &:not(:nth-last-child(-n+2)) {
+        margin-bottom: auto;
+      }
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+      &:nth-last-child(-n+3) {
+        display: none;
+      }
+      &-img {
+        width: 190px;
+        top: -30px;
+        left: -50px;
+        transform: unset;
+      }
+      &-info {
+        margin-top: 0;
+      }
+      &-title, &-job, &-year {
+        margin-left: 140px;
+        text-align: left;
+      }
+      &-count {
+        margin-left: 110px;
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -499,6 +601,7 @@
     }
   }
   .reviews {
+    margin-bottom: 260px;
     &__bg {
       clip-path: polygon(0 6%, 100% 9%, 100% 100%, 0% 100%);
     }
@@ -506,6 +609,23 @@
   .request {
     &-block {
       bottom: -200px;
+    }
+  }
+  .team {
+    &__card {
+      max-width: 290px;
+      &-img {
+        width: 150px;
+      }
+      &-title, &-job, &-year {
+        margin-left: 89px;
+      }
+      &-year {
+        margin-bottom: 25px;
+      }
+      &-count {
+        margin-left: 47px;
+      }
     }
   }
 }

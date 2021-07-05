@@ -396,7 +396,7 @@ body {
     display: block; }
 
 .reviews {
-  margin-bottom: 350px;
+  margin-bottom: 240px;
   padding-bottom: 280px;
   padding-top: 20px;
   position: relative; }
@@ -581,6 +581,70 @@ body {
     width: 100%;
     max-width: 520px; }
 
+.team__card {
+  position: relative;
+  padding: 20px;
+  width: 31%;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15); }
+  .team__cards {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
+  .team__card:not(:nth-child(3n)) {
+    margin-right: 3%; }
+  .team__card:not(:nth-last-child(-n+3)) {
+    margin-bottom: 3%; }
+  .team__card-img {
+    position: absolute;
+    top: -30px;
+    left: -50px;
+    z-index: -1;
+    width: 190px;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    border-radius: 200px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); }
+  .team__card-title, .team__card-job, .team__card-year {
+    margin-left: 140px; }
+  .team__card-title {
+    font-size: 20px;
+    font-weight: 600; }
+  .team__card-job {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 300; }
+  .team__card-year {
+    font-size: 16px;
+    margin-bottom: 40px; }
+  .team__card-count {
+    position: relative;
+    margin-left: 85px;
+    width: fit-content;
+    font-size: 16px;
+    color: #8F8F8F; }
+    .team__card-count:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      background-color: #A3CD39; }
+
+.team__button {
+  margin: auto;
+  display: block; }
+
 @media (max-width: 1200px) {
   .header__logo-icon {
     width: 35px;
@@ -607,7 +671,18 @@ body {
   .reviews__bg {
     clip-path: polygon(0 6%, 100% 13%, 100% 100%, 0% 100%); }
   .request-block {
-    max-width: 810px; } }
+    max-width: 810px; }
+  .team__card {
+    width: 48%;
+    max-width: 290px; }
+    .team__card-img {
+      width: 150px; }
+    .team__card-title, .team__card-job, .team__card-year {
+      margin-left: 90px; }
+    .team__card-year {
+      margin-bottom: 30px; }
+    .team__card-count {
+      margin-left: 34px; } }
 
 @media (max-width: 992px) {
   .burger-btn {
@@ -674,7 +749,24 @@ body {
         width: 100%; }
   .request-block {
     max-width: 690px;
-    transform: translateX(-50%); } }
+    transform: translateX(-50%); }
+  .team__card {
+    width: 48%;
+    max-width: 100%; }
+    .team__card:not(:nth-child(3n)) {
+      margin-right: unset; }
+    .team__card:not(:nth-last-child(-n+3)) {
+      margin-bottom: unset; }
+    .team__card:not(:nth-child(2n)) {
+      margin-right: 3%; }
+    .team__card:not(:nth-last-child(-n+2)) {
+      margin-bottom: 3%; }
+    .team__card-img {
+      width: 170px; }
+    .team__card-title, .team__card-job, .team__card-year {
+      margin-left: 120px; }
+    .team__card-count {
+      margin-left: 65px; } }
 
 @media (max-width: 768px) {
   .header__button {
@@ -736,7 +828,20 @@ body {
       margin-left: auto;
       margin-right: auto; }
     .request-block__img {
-      display: none; } }
+      display: none; }
+  .team__card-img {
+    left: 50%;
+    top: 10px;
+    width: 90px;
+    transform: translateX(-50%); }
+  .team__card-info {
+    margin-top: 85px; }
+  .team__card-title, .team__card-job, .team__card-year {
+    text-align: center;
+    margin-left: 0px; }
+  .team__card-count {
+    margin: auto;
+    font-size: 15px; } }
 
 @media (max-width: 767px) {
   .promo__common-item:nth-child(2), .promo__common-item:nth-child(5), .promo__common-item:nth-child(7) {
@@ -852,7 +957,32 @@ body {
         max-width: 320px; }
       .request-block .form__input {
         margin-right: 0;
-        margin-bottom: 10px; } }
+        margin-bottom: 10px; }
+  .team__card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 360px; }
+    .team__card:not(:nth-child(2n)), .team__card:not(:nth-child(3n)) {
+      margin-right: auto; }
+    .team__card:not(:nth-last-child(-n+2)) {
+      margin-bottom: auto; }
+    .team__card:not(:last-child) {
+      margin-bottom: 25px; }
+    .team__card:nth-last-child(-n+3) {
+      display: none; }
+    .team__card-img {
+      width: 190px;
+      top: -30px;
+      left: -50px;
+      transform: unset; }
+    .team__card-info {
+      margin-top: 0; }
+    .team__card-title, .team__card-job, .team__card-year {
+      margin-left: 140px;
+      text-align: left; }
+    .team__card-count {
+      margin-left: 110px; } }
 
 @media (max-width: 480px) {
   .header__contacts {
@@ -875,10 +1005,22 @@ body {
 @media (max-width: 405px) {
   .promo__title {
     font-size: 33px; }
-  .reviews__bg {
-    clip-path: polygon(0 6%, 100% 9%, 100% 100%, 0% 100%); }
+  .reviews {
+    margin-bottom: 260px; }
+    .reviews__bg {
+      clip-path: polygon(0 6%, 100% 9%, 100% 100%, 0% 100%); }
   .request-block {
-    bottom: -200px; } }
+    bottom: -200px; }
+  .team__card {
+    max-width: 290px; }
+    .team__card-img {
+      width: 150px; }
+    .team__card-title, .team__card-job, .team__card-year {
+      margin-left: 89px; }
+    .team__card-year {
+      margin-bottom: 25px; }
+    .team__card-count {
+      margin-left: 47px; } }
 
 @media (max-width: 350px) {
   .promo__title {
