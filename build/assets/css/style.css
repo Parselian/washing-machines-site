@@ -94,6 +94,18 @@ body {
   font-size: 32px;
   font-weight: 600;
   text-align: center; }
+  .section__title_tailed {
+    position: relative;
+    margin-bottom: 70px; }
+    .section__title_tailed:after {
+      position: absolute;
+      content: '';
+      left: 50%;
+      bottom: -20px;
+      width: 70px;
+      height: 2px;
+      transform: translateX(-50%);
+      background-color: #A3CD39; }
 
 .burger-btn {
   cursor: pointer;
@@ -826,6 +838,65 @@ body {
       top: -25px;
       transform: scale(1, -1); }
 
+.contacts {
+  padding: 80px 0; }
+  .contacts__list {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between; }
+    .contacts__list-item {
+      width: 32%; }
+      .contacts__list-item-title {
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 300; }
+      .contacts__list-item-info {
+        display: flex;
+        align-items: center; }
+      .contacts__list-item-icon {
+        margin-right: 10px;
+        width: 15px;
+        height: 15px;
+        min-width: 15px;
+        min-height: 15px;
+        fill: #A3CD39; }
+      .contacts__list-item-text {
+        font-size: 18px; }
+      .contacts__list-item-link {
+        font-size: 18px;
+        font-weight: 600;
+        color: #000;
+        text-decoration: none; }
+  .contacts__row {
+    display: flex; }
+  .contacts__promo {
+    position: relative;
+    z-index: 1;
+    margin-right: 3%;
+    padding: 40px 40px 230px 20px;
+    width: 35%;
+    background-color: #CADCFF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
+    .contacts__promo-title {
+      font-size: 22px;
+      margin-bottom: 30px; }
+    .contacts__promo-text {
+      margin-bottom: 30px;
+      font-size: 16px; }
+    .contacts__promo-img {
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+      z-index: -1;
+      width: 203px; }
+  .contacts__map {
+    width: 62%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
+
 @media (max-width: 1200px) {
   .header__logo-icon {
     width: 35px;
@@ -870,7 +941,11 @@ body {
       right: -170px; }
   .codes__block {
     max-width: 930px;
-    transform: translateX(-50%); } }
+    transform: translateX(-50%); }
+  .contacts__promo {
+    width: 40%; }
+  .contacts__map {
+    width: 57%; } }
 
 @media (max-width: 992px) {
   .burger-btn {
@@ -1004,7 +1079,41 @@ body {
     height: 70px; }
   .steps__block:nth-child(2) .steps__block-arrow {
     top: -15px;
-    transform: scale(1, -1); } }
+    transform: scale(1, -1); }
+  .contacts {
+    padding: 60px 0; }
+    .contacts__list {
+      flex-direction: column;
+      align-items: flex-start; }
+      .contacts__list-item {
+        width: 100%; }
+        .contacts__list-item-title {
+          font-size: 18px;
+          font-weight: 400;
+          color: #8F8F8F; }
+        .contacts__list-item-icon {
+          width: 25px;
+          height: 25px;
+          min-width: 25px;
+          min-height: 25px; }
+        .contacts__list-item-info {
+          font-size: 18px; }
+        .contacts__list-item:not(:last-child) {
+          margin-bottom: 20px; }
+    .contacts__row {
+      flex-direction: column; }
+    .contacts__promo {
+      margin-bottom: 20px;
+      margin-right: 0;
+      width: 100%;
+      padding-bottom: 50px; }
+      .contacts__promo-text {
+        width: 75%; }
+      .contacts__promo-img {
+        right: -25px; }
+    .contacts__map {
+      width: 100%;
+      height: 500px; } }
 
 @media (max-width: 768px) {
   .header__button {
@@ -1104,7 +1213,13 @@ body {
     .steps__block-arrow {
       display: none; }
     .steps__block:not(:last-child) {
-      margin-bottom: 35px; } }
+      margin-bottom: 35px; }
+  .contacts__list {
+    padding: 30px;
+    border: 1px solid #8F8F8F;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; } }
 
 @media (max-width: 767px) {
   .promo__common-item:nth-child(2), .promo__common-item:nth-child(5), .promo__common-item:nth-child(7) {
@@ -1273,7 +1388,9 @@ body {
         margin-bottom: 5px;
         font-size: 16px; }
     .codes__modal-button {
-      font-size: 18px; } }
+      font-size: 18px; }
+  .contacts__promo-text {
+    width: 70%; } }
 
 @media (max-width: 480px) {
   .header__contacts {
@@ -1300,7 +1417,11 @@ body {
       margin-right: 0;
       margin-bottom: 5px; }
     .steps__block-text {
-      text-align: center; } }
+      text-align: center; }
+  .contacts__promo {
+    overflow: hidden; }
+    .contacts__promo-img {
+      width: 180px; } }
 
 @media (max-width: 420px) {
   .header__button {
@@ -1332,7 +1453,15 @@ body {
     .team__card-year {
       margin-bottom: 25px; }
     .team__card-count {
-      margin-left: 47px; } }
+      margin-left: 47px; }
+  .contacts__promo {
+    padding: 25px 15px 40px;
+    text-align: center; }
+    .contacts__promo-text {
+      width: 100%; }
+    .contacts__promo-img {
+      bottom: -40px;
+      filter: opacity(0.4) saturate(0.3); } }
 
 @media (max-width: 350px) {
   .promo__title {

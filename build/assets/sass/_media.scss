@@ -84,6 +84,14 @@
       transform: translateX(-50%);
     }
   }
+  .contacts {
+    &__promo {
+      width: 40%;
+    }
+    &__map {
+      width: 57%;
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -314,6 +322,52 @@
     }
     }
   }
+  .contacts {
+    padding: 60px 0;
+    &__list {
+      flex-direction: column;
+      align-items: flex-start;
+      &-item {
+        width: 100%;
+        &-title {
+          font-size: 18px;
+          font-weight: 400;
+          color: $inactive-color;
+        }
+        &-icon {
+          width: 25px;
+          height: 25px;
+          min-width: 25px;
+          min-height: 25px;
+        }
+        &-info {
+          font-size: 18px;
+        }
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &__row {
+      flex-direction: column;
+    }
+    &__promo {
+      margin-bottom: 20px;
+      margin-right: 0;
+      width: 100%;
+      padding-bottom: 50px;
+      &-text {
+        width: 75%;
+      }
+      &-img {
+        right: -25px;
+      }
+    }
+    &__map {
+      width: 100%;
+      height: 500px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -476,6 +530,15 @@
       &:not(:last-child) {
         margin-bottom: 35px;
       }
+    }
+  }
+  .contacts {
+    &__list {
+      padding: 30px;
+      border: 1px solid $inactive-color;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
     }
   }
 }
@@ -730,6 +793,13 @@
       }
     }
   }
+  .contacts {
+    &__promo {
+      &-text {
+        width: 70%;
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -780,6 +850,14 @@
       }
       &-text {
         text-align: center;
+      }
+    }
+  }
+  .contacts {
+    &__promo {
+      overflow: hidden;
+      &-img {
+        width: 180px;
       }
     }
   }
@@ -840,6 +918,19 @@
       }
       &-count {
         margin-left: 47px;
+      }
+    }
+  }
+  .contacts {
+    &__promo {
+      padding: 25px 15px 40px;
+      text-align: center;
+      &-text {
+        width: 100%;
+      }
+      &-img {
+        bottom: -40px;
+        filter: opacity(0.4) saturate(0.3);
       }
     }
   }

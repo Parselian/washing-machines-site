@@ -15,6 +15,9 @@ require_once(__DIR__ . '/assets/configs/config.php');
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 	<title>Document</title>
+
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+    </script>
 </head>
 <body>
 <header class="header">
@@ -364,7 +367,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 				<div class="team__card-info">
 					<h3 class="team__card-title">Виталий В.</h3>
 					<div class="team__card-job">Инженер</div>
-					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-year">Стаж работы: <span class="text_bold">12 лет</span></div>
 					<div class="team__card-count">200+ выполненных заказов</div>
 				</div>
 			</div>
@@ -376,7 +379,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 				<div class="team__card-info">
 					<h3 class="team__card-title">Виталий В.</h3>
 					<div class="team__card-job">Инженер</div>
-					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-year">Стаж работы: <span class="text_bold">12 лет</span></div>
 					<div class="team__card-count">200+ выполненных заказов</div>
 				</div>
 			</div>
@@ -388,7 +391,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 				<div class="team__card-info">
 					<h3 class="team__card-title">Виталий В.</h3>
 					<div class="team__card-job">Инженер</div>
-					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-year">Стаж работы: <span class="text_bold">12 лет</span></div>
 					<div class="team__card-count">200+ выполненных заказов</div>
 				</div>
 			</div>
@@ -400,7 +403,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 				<div class="team__card-info">
 					<h3 class="team__card-title">Виталий В.</h3>
 					<div class="team__card-job">Инженер</div>
-					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-year">Стаж работы: <span class="text_bold">12 лет</span></div>
 					<div class="team__card-count">200+ выполненных заказов</div>
 				</div>
 			</div>
@@ -412,7 +415,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 				<div class="team__card-info">
 					<h3 class="team__card-title">Виталий В.</h3>
 					<div class="team__card-job">Инженер</div>
-					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-year">Стаж работы: <span class="text_bold">12 лет</span></div>
 					<div class="team__card-count">200+ выполненных заказов</div>
 				</div>
 			</div>
@@ -424,7 +427,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 				<div class="team__card-info">
 					<h3 class="team__card-title">Виталий В.</h3>
 					<div class="team__card-job">Инженер</div>
-					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-year">Стаж работы: <span class="text_bold">12 лет</span></div>
 					<div class="team__card-count">200+ выполненных заказов</div>
 				</div>
 			</div>
@@ -583,5 +586,78 @@ require_once(__DIR__ . '/assets/configs/config.php');
 		</div>
 	</div>
 </section>
+
+<section class="contacts">
+	<div class="container contacts__wrap">
+		<h2 class="section__title section__title_tailed">Контакты</h2>
+		<div class="contacts__list">
+			<div class="contacts__list-item">
+				<div class="contacts__list-item-title">Наш телефон:</div>
+				<div class="contacts__list-item-info">
+					<svg class="contacts__list-item-icon">
+						<use xlink:href="./assets/stack/sprite.svg#phone"></use>
+					</svg>
+					<a href="tel: <?= $phone_link?>" class="contacts__list-item-link"><?= $phone_format ?></a>
+				</div>
+			</div>
+			<div class="contacts__list-item">
+				<div class="contacts__list-item-title">Мы работаем:</div>
+				<div class="contacts__list-item-info">
+					<svg class="contacts__list-item-icon">
+						<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+					</svg>
+					<div class="">С 8:00 до 23:00 <span class="text_accent text_bold">без выходных</span></div>
+				</div>
+			</div>
+			<div class="contacts__list-item">
+				<div class="contacts__list-item-title">Адрес главного офиса</div>
+				<div class="contacts__list-item-info">
+					<svg class="contacts__list-item-icon">
+						<use xlink:href="./assets/stack/sprite.svg#placeholder"></use>
+					</svg>
+					190915, Санкт-Петербург, Московский пр., д.8
+				</div>
+			</div>
+		</div>
+
+		<div class="contacts__row">
+			<div class="contacts__promo">
+				<h3 class="contacts__promo-title">Наш мастер рядом</h3>
+				<div class="contacts__promo-text">
+					Возможно наши мастера прямо сейчас в шаговой доступности от вашей станции метро!
+				</div>
+				<button class="button contacts__promo-button">Вызвать мастера</button>
+				<picture>
+					<source srcset="./assets/images/webp/codes-man.webp" type="image/webp">
+					<img src="./assets/images/codes-man.png" alt="инженер" class="contacts__promo-img">
+				</picture>
+			</div>
+			<div id="map" class="contacts__map"></div>
+		</div>
+	</div>
+</section>
+
+<script>
+	setTimeout(() => {
+        let elem = document.createElement('script');
+
+        elem.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=init';
+        document.getElementsByTagName('body')[0].appendChild(elem);
+    }, 2500);
+
+	function init(){
+        // Создание карты.
+        var myMap = new ymaps.Map("map", {
+            // Координаты центра карты.
+            // Порядок по умолчанию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: [55.76, 37.64],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 7
+        });
+    }
+</script>
 </body>
 </html>
