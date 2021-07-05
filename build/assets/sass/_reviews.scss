@@ -1,16 +1,17 @@
 .reviews {
-  padding-bottom: 60px;
+  margin-bottom: 350px;
+  padding-bottom: 280px;
   padding-top: 20px;
   position: relative;
   &__bg {
     position: absolute;
-    top: -140px;
+    top: -150px;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: -1;
     background-color: $accent-bg-color;
-    clip-path: polygon(0 6%, 100% 20%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 6%, 100% 16%, 100% 100%, 0% 100%);
   }
   &__slide {
     &r {
