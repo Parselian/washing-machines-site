@@ -92,7 +92,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 			<button class="button button_alt promo__common-item" value="Не греет воду">Не греет воду</button>
 		</div>
 		<form action="#" class="form promo__form">
-			<input type="text" name="user_phone" class="form__input promo__form-input" placeholder="Ваш телефон:">
+			<input type="text" name="user_phone" class="form__input promo__form-input" placeholder="Ваш телефон:" required>
 			<button class="button promo__form-button">Вызвать мастера</button>
 		</form>
 		<picture>
@@ -319,6 +319,34 @@ require_once(__DIR__ . '/assets/configs/config.php');
 			<li class="reviews__slider-dots-item"></li>
 		</ul>
 	</div>
+
+	<section class="request-block">
+		<div class="container request-block__wrap">
+			<div class="request-block__suptitle">Новым клиентам</div>
+			<h3 class="text_underline request-block__title">Скидка 20%</h3>
+			<div class="request-block__subtitle">
+				Вы у нас впервые? Оставьте заявку и
+				<span class="line-break">получите скидку 20% на первый ремонт!</span>
+			</div>
+			<form action="" class="form request-block__form">
+				<input type="text" name="user_phone" class="form__input request-block__form-input" placeholder="Ваш телефон:" required>
+				<button class="button form__button request-block__form-button">Заказать ремонт</button>
+				<div class="form__footnote">
+					Нажимая на кнопку "Заказать ремонт" я соглашаюсь с
+					<a href="#" class="form__footnote-link">политикой <span class="line-break"></span> обработки персональных данных</a>
+				</div>
+			</form>
+
+			<picture>
+				<source srcset="./assets/images/webp/request-man_1.webp" type="image/webp">
+				<img src="./assets/images/request-man_1.png" alt="Инженер" class="request-block__img">
+			</picture>
+		</div>
+		<picture>
+			<source srcset="./assets/images/webp/advantage-block_bg-1.webp" type="image/webp">
+			<img src="./assets/images/advantage-block_bg-1.jpg" alt="Ремонт стиральных машин в СПб" class="request-block__bg">
+		</picture>
+	</section>
 </section>
 </body>
 </html>
