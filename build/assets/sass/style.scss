@@ -3,6 +3,7 @@
 body {
   font-family: 'Open Sans', sans-serif, --apple-system;
   color: $main-text-color;
+  overflow-x: hidden;
 }
 
 .line-break {
@@ -30,6 +31,9 @@ body {
       height: 2px;
       background-color: $active-color;
     }
+  }
+  &_capitalize {
+    text-transform: uppercase;
   }
 }
 
@@ -123,4 +127,5 @@ body {
 @import "request-section";
 @import "team";
 @import "error-codes";
+@import "steps";
 @import "media";

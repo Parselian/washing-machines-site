@@ -504,5 +504,84 @@ require_once(__DIR__ . '/assets/configs/config.php');
 		</div>
 	</div>
 </section>
+
+<section class="steps">
+	<div class="steps__bg"></div>
+
+	<section class="request-block request-block_top">
+		<div class="container request-block__wrap">
+			<div class="request-block__suptitle">Выезд мастера</div>
+			<h3 class="text_underline text_capitalize request-block__title">Бесплатно</h3>
+			<div class="request-block__subtitle">
+				Оставьте заявку и назначте удобное для
+				<span class="line-break">Вас время и место</span>
+			</div>
+			<form action="" class="form request-block__form">
+				<input type="text" name="user_phone" class="form__input request-block__form-input" placeholder="Ваш телефон:" required>
+				<button class="button form__button request-block__form-button">Заказать ремонт</button>
+				<div class="form__footnote">
+					Нажимая на кнопку "Заказать ремонт" я соглашаюсь с
+					<a href="#" class="form__footnote-link">политикой <span class="line-break"></span> обработки персональных данных</a>
+				</div>
+			</form>
+
+			<picture>
+				<source srcset="./assets/images/webp/request-man_2.webp" type="image/webp">
+				<img src="./assets/images/request-man_2.png" alt="Инженер" class="request-block__img">
+			</picture>
+		</div>
+		<picture>
+			<source srcset="./assets/images/webp/advantage-block_bg-1.webp" type="image/webp">
+			<img src="./assets/images/advantage-block_bg-1.jpg" alt="Ремонт стиральных машин в СПб" class="request-block__bg">
+		</picture>
+	</section>
+
+	<div class="container steps__wrap">
+		<h2 class="section__title">Как происходит ремонт</h2>
+		<div class="steps__blocks">
+			<div class="steps__block">
+				<svg class="steps__block-icon">
+					<use xlink:href="./assets/stack/sprite.svg#delivery"></use>
+				</svg>
+				<div class="steps__block-text">
+					Вы оставляете заявку на вызов мастера на нашем сайте
+				</div>
+				<svg class="steps__block-arrow">
+					<use xlink:href="./assets/stack/sprite.svg#right-drawn-arrow"></use>
+				</svg>
+			</div>
+			<div class="steps__block">
+				<svg class="steps__block-icon">
+					<use xlink:href="./assets/stack/sprite.svg#washing-machine"></use>
+				</svg>
+				<div class="steps__block-text">
+					Приехавший к вам мастер проводит бесплатную диагностику для определения неисправности.
+				</div>
+				<svg class="steps__block-arrow">
+					<use xlink:href="./assets/stack/sprite.svg#right-drawn-arrow"></use>
+				</svg>
+			</div>
+			<div class="steps__block">
+				<svg class="steps__block-icon">
+					<use xlink:href="./assets/stack/sprite.svg#wrench"></use>
+				</svg>
+				<div class="steps__block-text">
+					После окончания диагностики вы согласовываете ремонт и мастер приступает к ремонту.
+				</div>
+				<svg class="steps__block-arrow">
+					<use xlink:href="./assets/stack/sprite.svg#right-drawn-arrow"></use>
+				</svg>
+			</div>
+			<div class="steps__block">
+				<svg class="steps__block-icon">
+					<use xlink:href="./assets/stack/sprite.svg#warranty"></use>
+				</svg>
+				<div class="steps__block-text">
+					По окончании всех работ мастер выдаст вам договор и гарантийный талон, сроком на 2 года
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 </body>
 </html>
