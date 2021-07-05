@@ -348,5 +348,86 @@ require_once(__DIR__ . '/assets/configs/config.php');
 		</picture>
 	</section>
 </section>
+
+<section class="team">
+	<div class="container team__wrap">
+		<h2 class="section__title">Наша команда <span class="text_accent">профессионалов</span></h2>
+		<div class="team__cards">
+			<div class="team__card">
+				<picture>
+					<source srcset="./assets/images/webp/team_1.webp" type="image/webp">
+					<img src="./assets/images/team_1.jpg" alt="Инженер" class="team__card-img">
+				</picture>
+				<div class="team__card-info">
+					<h3 class="team__card-title">Виталий В.</h3>
+					<div class="team__card-job">Инженер</div>
+					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-count">200+ выполненных заказов</div>
+				</div>
+			</div>
+			<div class="team__card">
+				<picture>
+					<source srcset="./assets/images/webp/team_1.webp" type="image/webp">
+					<img src="./assets/images/team_1.jpg" alt="Инженер" class="team__card-img">
+				</picture>
+				<div class="team__card-info">
+					<h3 class="team__card-title">Виталий В.</h3>
+					<div class="team__card-job">Инженер</div>
+					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-count">200+ выполненных заказов</div>
+				</div>
+			</div>
+			<div class="team__card">
+				<picture>
+					<source srcset="./assets/images/webp/team_1.webp" type="image/webp">
+					<img src="./assets/images/team_1.jpg" alt="Инженер" class="team__card-img">
+				</picture>
+				<div class="team__card-info">
+					<h3 class="team__card-title">Виталий В.</h3>
+					<div class="team__card-job">Инженер</div>
+					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-count">200+ выполненных заказов</div>
+				</div>
+			</div>
+			<div class="team__card">
+				<picture>
+					<source srcset="./assets/images/webp/team_1.webp" type="image/webp">
+					<img src="./assets/images/team_1.jpg" alt="Инженер" class="team__card-img">
+				</picture>
+				<div class="team__card-info">
+					<h3 class="team__card-title">Виталий В.</h3>
+					<div class="team__card-job">Инженер</div>
+					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-count">200+ выполненных заказов</div>
+				</div>
+			</div>
+			<div class="team__card">
+				<picture>
+					<source srcset="./assets/images/webp/team_1.webp" type="image/webp">
+					<img src="./assets/images/team_1.jpg" alt="Инженер" class="team__card-img">
+				</picture>
+				<div class="team__card-info">
+					<h3 class="team__card-title">Виталий В.</h3>
+					<div class="team__card-job">Инженер</div>
+					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-count">200+ выполненных заказов</div>
+				</div>
+			</div>
+			<div class="team__card">
+				<picture>
+					<source srcset="./assets/images/webp/team_1.webp" type="image/webp">
+					<img src="./assets/images/team_1.jpg" alt="Инженер" class="team__card-img">
+				</picture>
+				<div class="team__card-info">
+					<h3 class="team__card-title">Виталий В.</h3>
+					<div class="team__card-job">Инженер</div>
+					<div class="team__card-year">Стаж работы: <span class="text_underline text_bold">12 лет</span></div>
+					<div class="team__card-count">200+ выполненных заказов</div>
+				</div>
+			</div>
+		</div>
+		<button class="button team__button">Вызвать мастера</button>
+	</div>
+</section>
 </body>
 </html>
