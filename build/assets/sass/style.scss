@@ -88,6 +88,22 @@ body {
   }
 }
 
+.select {
+  -webkit-appearance: none;
+  padding: 13px 20px;
+  font-size: 16px;
+  background: #fff url('../svg/select-arrow.svg') 96% center no-repeat;
+  background-size: 10px;
+  border: 1px solid $inactive-color;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  &:focus {
+    border-color: $active-color;
+  }
+}
+
 .section {
   &__title {
     margin-bottom: 50px;
@@ -106,4 +122,5 @@ body {
 @import "reviews";
 @import "request-section";
 @import "team";
+@import "error-codes";
 @import "media";

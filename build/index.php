@@ -277,7 +277,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 						</div>
 					</div>
 					<div class="reviews__slide-person-rating">
-						<div class="reviews__slide-person-rating-text">Рейтинг: </div>
+						<div class="reviews__slide-person-rating-text">Рейтинг:</div>
 						<span class="reviews__slide-person-rating-number">4.7</span>
 					</div>
 				</div>
@@ -289,15 +289,18 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					<div class="reviews__slide-info-gallery">
 						<picture>
 							<source srcset="./assets/images/webp/review-gallery-img.webp" type="image/webp">
-							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб" class="reviews__slide-info-gallery-img">
+							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб"
+								 class="reviews__slide-info-gallery-img">
 						</picture>
 						<picture>
 							<source srcset="./assets/images/webp/review-gallery-img.webp" type="image/webp">
-							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб" class="reviews__slide-info-gallery-img">
+							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб"
+								 class="reviews__slide-info-gallery-img">
 						</picture>
 						<picture>
 							<source srcset="./assets/images/webp/review-gallery-img.webp" type="image/webp">
-							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб" class="reviews__slide-info-gallery-img">
+							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб"
+								 class="reviews__slide-info-gallery-img">
 						</picture>
 					</div>
 				</div>
@@ -427,6 +430,78 @@ require_once(__DIR__ . '/assets/configs/config.php');
 			</div>
 		</div>
 		<button class="button team__button">Вызвать мастера</button>
+	</div>
+</section>
+
+<section class="codes">
+	<div class="codes__bg">
+		<picture>
+			<source srcset="./assets/images/webp/codes-man.webp" type="image/webp">
+			<img src="./assets/images/codes-man.png" alt="Инженер" class="codes__bg-man">
+		</picture>
+	</div>
+	<div class="codes__block">
+		<div class="codes__col">
+			<h3 class="codes__title">Возможные коды ошибок <span class="line-break"></span>стиральных машин</h3>
+			<div class="codes__select-wrap">
+				<label for="codes-select-brand" class="codes__label">Какой у вас бренд:</label>
+				<select id="codes-select-brand" class="select codes__select">
+					<option value="0" disabled selected>Выберите ваш бренд</option>
+					<option value="bosch">Bosch</option>
+					<option value="ariston">Ariston</option>
+					<option value="zanussi">Zanussi</option>
+					<option value="whirlpool">Whirlpool</option>
+				</select>
+			</div>
+			<div class="codes__select-wrap codes__select-wrap_mobile">
+				<label for="codes-select-error" class="codes__label">Какая у вас ошибка:</label>
+				<select id="codes-select-error" class="select codes__select">
+					<option value="0" disabled selected>Выберите код ошибки</option>
+					<option value="F01">F01</option>
+				</select>
+			</div>
+			<div class="codes__label codes__label_desktop">Возможные коды ошибок:</div>
+			<div class="codes__btns">
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn codes__btn_active" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+				<button class="codes__btn" value="F01">F01</button>
+			</div>
+		</div>
+		<div class="codes__col">
+			<div class="codes__modal">
+				<h4 class="codes__modal-title">Не происходит вращений в обратную сторону.</h4>
+				<p class="codes__modal-text">
+					Ошибка также относится к ошибкам модуля контроля. В данном случае может быть неисправно реле реверса или симистор.
+					Ошибка относится к критическим.
+				</p>
+				<div class="codes__modal-row">
+					<div class="codes__modal-price">
+						<div class="codes__modal-price-label">Ремонт:</div>
+						от <span class="text_accent codes__modal-price-amount">450 руб.</span>
+					</div>
+					<button class="button codes__modal-btn">Вызвать мастера</button>
+				</div>
+			</div>
+			<picture>
+				<source srcset="./assets/images/webp/washing-machine.webp" type="image/webp">
+				<img src="./assets/images/washing-machine.jpg" alt="Стиральная машина" class="codes__img">
+			</picture>
+		</div>
 	</div>
 </section>
 </body>
