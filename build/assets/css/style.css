@@ -408,10 +408,10 @@ body {
       transition: .2s; }
     .pricelist__card-title {
       margin-bottom: 5px;
-      font-weight: 600;
       font-size: 18px; }
     .pricelist__card-price {
-      font-size: 16px; }
+      font-size: 16px;
+      font-weight: 600; }
     .pricelist__card:hover {
       color: #A3CD39;
       border-color: #A3CD39;
@@ -684,10 +684,13 @@ body {
 
 .codes {
   padding-top: 80px;
+  padding-bottom: 80px;
   position: relative;
-  height: 800px; }
+  overflow: hidden;
+  background-color: #F7F7F7; }
   .codes__bg {
     position: absolute;
+    display: none;
     left: 0px;
     right: 0;
     z-index: -1;
@@ -698,12 +701,14 @@ body {
     .codes__bg-man {
       position: absolute;
       right: -100px;
-      bottom: 0;
-      height: 750px; }
+      bottom: -190px;
+      z-index: 0;
+      height: 800px; }
   .codes__block {
     position: relative;
-    top: 60px;
-    left: 50%;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
     padding: 25px 25px 50px 30px;
     display: flex;
     justify-content: space-between;
@@ -713,7 +718,6 @@ body {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    transform: translateX(-56%);
     -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
@@ -897,6 +901,12 @@ body {
     -moz-border-radius: 5px;
     border-radius: 5px; }
 
+@media (max-width: 1400px) {
+  .codes__bg-man {
+    right: -160px;
+    bottom: -140px;
+    height: 750px; } }
+
 @media (max-width: 1200px) {
   .header__logo-icon {
     width: 35px;
@@ -940,8 +950,7 @@ body {
     .codes__bg-man {
       right: -170px; }
   .codes__block {
-    max-width: 930px;
-    transform: translateX(-50%); }
+    max-width: 930px; }
   .contacts__promo {
     width: 40%; }
   .contacts__map {
@@ -1031,7 +1040,7 @@ body {
     .team__card-count {
       margin-left: 65px; }
   .codes {
-    padding-top: 20px;
+    padding: 60px 0;
     background-color: #F7F7F7; }
     .codes__bg {
       clip-path: unset;
@@ -1278,15 +1287,15 @@ body {
     .pricelist__card {
       margin-bottom: 0;
       width: 100%;
-      padding: 10px 15px;
+      padding: 15px 15px;
       border: none;
-      border-bottom: 1px solid #8F8F8F;
-      background-color: rgba(255, 255, 255, 0.6);
-      -webkit-border-radius: 0;
-      -moz-border-radius: 0;
-      border-radius: 0; }
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px; }
       .pricelist__cards {
         margin-bottom: 40px; }
+      .pricelist__card:nth-child(2n) {
+        background-color: #F7F7F7; }
       .pricelist__card:not(:nth-child(2n)) {
         margin-right: 0; }
       .pricelist__card-icon {
@@ -1363,32 +1372,32 @@ body {
       text-align: left; }
     .team__card-count {
       margin-left: 110px; }
-  .codes {
-    padding-top: 0; }
-    .codes__bg {
-      height: 900px; }
-    .codes__block {
-      padding: 25px 15px 20px 15px;
-      max-width: calc(95% - 30px); }
-    .codes__select {
-      width: 100%;
-      max-width: 320px; }
-    .codes__btn {
-      width: 17%; }
-    .codes__modal-row {
-      flex-direction: column;
-      align-items: center;
-      text-align: center; }
-    .codes__modal-price {
-      margin-bottom: 15px;
-      margin-right: 0;
-      font-size: 28px;
-      line-height: 1; }
-      .codes__modal-price-label {
-        margin-bottom: 5px;
-        font-size: 16px; }
-    .codes__modal-button {
-      font-size: 18px; }
+  .codes__bg {
+    height: 900px; }
+    .codes__bg-man {
+      display: none; }
+  .codes__block {
+    padding: 25px 15px 20px 15px;
+    max-width: calc(95% - 30px); }
+  .codes__select {
+    width: 100%;
+    max-width: 320px; }
+  .codes__btn {
+    width: 17%; }
+  .codes__modal-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; }
+  .codes__modal-price {
+    margin-bottom: 15px;
+    margin-right: 0;
+    font-size: 28px;
+    line-height: 1; }
+    .codes__modal-price-label {
+      margin-bottom: 5px;
+      font-size: 16px; }
+  .codes__modal-button {
+    font-size: 18px; }
   .contacts__promo-text {
     width: 70%; } }
 
@@ -1431,7 +1440,9 @@ body {
     .header__button-icon {
       display: block; }
   .request-block__subtitle {
-    font-size: 16px; } }
+    font-size: 16px; }
+  .codes__modal {
+    padding: 15px 10px; } }
 
 @media (max-width: 405px) {
   .promo__title {

@@ -15,9 +15,6 @@ require_once(__DIR__ . '/assets/configs/config.php');
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 	<title>Document</title>
-
-	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
-    </script>
 </head>
 <body>
 <header class="header">
@@ -72,7 +69,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 
 <section class="promo">
 	<picture>
-		<source src="./assets/images/webp/promo-bg.webp" type="image/webp">
+		<source srcset="./assets/images/webp/promo-bg.webp" type="image/webp">
 		<img src="./assets/images/promo-bg.jpg" alt="Ремонт стиральных машин в СПб" class="promo__bg">
 	</picture>
 	<div class="container promo__wrap">
@@ -437,12 +434,12 @@ require_once(__DIR__ . '/assets/configs/config.php');
 </section>
 
 <section class="codes">
-	<div class="codes__bg">
-		<picture>
-			<source srcset="./assets/images/webp/codes-man.webp" type="image/webp">
-			<img src="./assets/images/codes-man.png" alt="Инженер" class="codes__bg-man">
-		</picture>
-	</div>
+	<picture>
+		<source srcset="./assets/images/webp/codes-man.webp" type="image/webp">
+		<img src="./assets/images/codes-man.png" alt="Инженер" class="codes__bg-man">
+	</picture>
+<!--	<div class="codes__bg">-->
+<!--	</div>-->
 	<div class="codes__block">
 		<div class="codes__col">
 			<h3 class="codes__title">Возможные коды ошибок <span class="line-break"></span>стиральных машин</h3>
