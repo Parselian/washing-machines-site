@@ -252,7 +252,9 @@ require_once(__DIR__ . '/assets/configs/config.php');
 </section>
 
 <section class="reviews">
-	<div class="reviews__bg"></div>
+	<div class="reviews__bg-wrap">
+		<div class="reviews__bg"></div>
+	</div>
 
 	<div class="container reviews__wrap">
 		<h2 class="section__title">Что говорят о нас наши клиенты</h2>

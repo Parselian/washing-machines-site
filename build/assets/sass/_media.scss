@@ -417,6 +417,7 @@
   }
   .prices {
     &__bg {
+      display: none;
       clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
     }
   }
@@ -433,27 +434,55 @@
     }
   }
   .pricelist {
+    padding-bottom: 60px;
     &__card {
       &s {
-        margin-bottom: 30px;
+        margin-bottom: 40px;
       }
-      margin-bottom: 10px;
-      padding: 10px 15px;
-      width: 48%;
-      &:not(:nth-child(3n)) {
-        margin-right: unset;
+      margin-bottom: 0;
+      width: 100%;
+      padding: 15px 15px;
+      border: none;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      &:nth-child(2n) {
+        background-color: $alt-bg-color;
       }
-      &:not(:nth-child(2n)) {
-        margin-right: 2%;
-      }
-      &:last-child {
+      &:not(:nth-child(2n)), &:not(:nth-child(3n)) {
         margin-right: 0;
+      }
+      &-icon {
+        display: none;
+      }
+      &-info {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+      }
+      &-title {
+        margin-bottom: 0;
+      }
+      &:hover {
+        border-color: $inactive-color;
+      }
+      &_active {
+        background-color: $alt-text-color;
+        border-color: $active-color;
+        color: $active-color;
+        .pricelist {
+          &__card {
+            &-icon {
+              fill: $active-color;
+            }
+          }
+        }
       }
     }
   }
   .reviews {
     &__bg {
-      clip-path: polygon(0 6%, 100% 11%, 100% 100%, 0% 100%);
+      clip-path: polygon(0 9%, 100% 11%, 100% 100%, 0% 100%);
     }
     &__slide {
       &-person {
@@ -632,57 +661,10 @@
       }
     }
   }
-  .pricelist {
-    padding-bottom: 60px;
-    &__card {
-      &s {
-        margin-bottom: 40px;
-      }
-      margin-bottom: 0;
-      width: 100%;
-      padding: 15px 15px;
-      border: none;
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      border-radius: 10px;
-      &:nth-child(2n) {
-        background-color: $alt-bg-color;
-      }
-      &:not(:nth-child(2n)) {
-        margin-right: 0;
-      }
-      &-icon {
-        display: none;
-      }
-      &-info {
-        width: 100%;
-        justify-content: space-between;
-        display: flex;
-      }
-      &-title {
-        margin-bottom: 0;
-      }
-      &:hover {
-        border-color: $inactive-color;
-      }
-      &_active {
-        background-color: $alt-text-color;
-        border-color: $active-color;
-        color: $active-color;
-        .pricelist {
-          &__card {
-            &-icon {
-              fill: $active-color;
-            }
-          }
-        }
-      }
-    }
-  }
   .reviews {
     padding-top: 0;
     &__bg {
-      top: -120px;
+      top: -16  0px;
     }
     &__slide {
       padding: 40px 30px;
@@ -811,6 +793,9 @@
       &-text {
         width: 70%;
       }
+    }
+    &__map {
+      height: 350px;
     }
   }
 }
