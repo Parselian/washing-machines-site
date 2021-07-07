@@ -579,15 +579,15 @@ require_once(__DIR__ . '/assets/configs/config.php');
 						<h5 class="steps__info-block-title">Гарантия на проведённый ремонт</h5>
 						<p class="steps__info-block-text">
 							После завершения ремонта наш мастер выдаст Вам весь пакет документов, а также пожизненную гарантию на услуги
-							сервисного центра <?= $brand_name?>
+							сервисного центра <?= $brand_name ?>
 						</p>
 					</div>
 				</div>
 				<div class="steps__info-contacts">
 					<button class="button steps__info-button">Вызвать мастера</button>
-					<a href="tel:<?=$phone_link?>" class="steps__info-phone">
+					<a href="tel:<?= $phone_link ?>" class="steps__info-phone">
 						<span class="steps__info-phone-label">или позвоните нам:</span>
-						<?= $phone_format?>
+                        <?= $phone_format ?>
 					</a>
 				</div>
 				<div class="steps__info-footnote">Мы работаем с 8:00 до 23:00 без выходных</div>
@@ -645,6 +645,82 @@ require_once(__DIR__ . '/assets/configs/config.php');
 		</div>
 	</div>
 </section>
+
+<footer class="footer">
+	<div class="container footer__wrap">
+		<div class="footer__col">
+			<svg class="footer__logo">
+				<use xlink:href="./assets/stack/sprite.svg#logo_inversed"></use>
+			</svg>
+			<a href="./politika.html" class="footer__policy">Политика <span class="line-break"></span> конфиденциальности</a>
+		</div>
+		<div class="footer__col footer__billings">
+			<div class="footer__billings-label">Мы принимаем:</div>
+			<svg class="footer__billings-icon">
+				<use xlink:href="./assets/stack/sprite.svg#visa"></use>
+			</svg>
+			<svg class="footer__billings-icon">
+				<use xlink:href="./assets/stack/sprite.svg#mastercard"></use>
+			</svg>
+			<svg class="footer__billings-icon">
+				<use xlink:href="./assets/stack/sprite.svg#sber"></use>
+			</svg>
+			<svg class="footer__billings-icon">
+				<use xlink:href="./assets/stack/sprite.svg#cash"></use>
+			</svg>
+		</div>
+		<div class="footer__col footer__nav">
+<!--			<div class="footer__nav-title">Сервисный центр</div>-->
+			<a href="#features" class="footer__nav-link">Преимущества</a>
+			<a href="#prices" class="footer__nav-link">Цены</a>
+			<a href="#reviews" class="footer__nav-link">Отзывы</a>
+			<a href="#contacts" class="footer__nav-link">Контакты</a>
+		</div>
+		<div class="footer__contacts">
+			<div class="footer__contacts-info">
+				<div class="footer__contacts-info-block">
+					<div class="footer__contacts-info-block-title">
+						<svg class="footer__contacts-info-block-icon">
+							<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+						</svg>
+						Время работы:
+					</div>
+					<div class="footer__contacts-info-block-text">
+						8:00 — 23:00 без выходных
+					</div>
+				</div>
+				<div class="footer__contacts-info-block">
+					<div class="footer__contacts-info-block-title">
+						<svg class="footer__contacts-info-block-icon">
+							<use xlink:href="./assets/stack/sprite.svg#truck_monochromed"></use>
+						</svg>
+						Выезд:
+					</div>
+					<div class="footer__contacts-info-block-text">
+						Во все районы Санкт-Петербурга
+					</div>
+				</div>
+			</div>
+			<div class="footer__contacts-callback">
+				<button class="button footer__contacts-callback-button">Заказать ремонт</button>
+				<div class="footer__contacts-callback-phone-wrap">
+					<div class="footer__contacts-callback-phone-label">Телефон:</div>
+					<a href="tel:<?= $phone_link ?>" class="footer__contacts-callback-phone">
+						<svg class="footer__contacts-callback-phone-icon">
+							<use xlink:href="./assets/stack/sprite.svg#phone"></use>
+						</svg>
+                        <?= $phone_format ?>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container footer__footnote">
+		Компания <?= $brand_name?>. Все права защищены. Bosch, Indesit, Zanussi, Electrolux, Whirlpool, Samsung и их логотипы являются
+		зарегистрированными товарными знаками. Информация опубликованная на сайте не является публичной
+		офертой, определяемой положениями Статьи 437 ГК РФ. Цены указаны за услугу, запчасти в эту стоимость не входят.
+	</div>
+</footer>
 
 <script>
     setTimeout(() => {
