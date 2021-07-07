@@ -440,8 +440,8 @@ require_once(__DIR__ . '/assets/configs/config.php');
 		<source srcset="./assets/images/webp/codes-man.webp" type="image/webp">
 		<img src="./assets/images/codes-man.png" alt="Инженер" class="codes__bg-man">
 	</picture>
-<!--	<div class="codes__bg">-->
-<!--	</div>-->
+	<!--	<div class="codes__bg">-->
+	<!--	</div>-->
 	<div class="codes__block">
 		<div class="codes__col">
 			<h3 class="codes__title">Возможные коды ошибок <span class="line-break"></span>стиральных машин</h3>
@@ -507,80 +507,90 @@ require_once(__DIR__ . '/assets/configs/config.php');
 	</div>
 </section>
 
-<section class="steps">
-	<div class="steps__bg"></div>
-
-	<section class="request-block request-block_top">
-		<div class="container request-block__wrap">
-			<div class="request-block__suptitle">Выезд мастера</div>
-			<h3 class="text_underline text_capitalize request-block__title">Бесплатно</h3>
-			<div class="request-block__subtitle">
-				Оставьте заявку и назначте удобное для
-				<span class="line-break">Вас время и место</span>
-			</div>
-			<form action="" class="form request-block__form">
-				<input type="text" name="user_phone" class="form__input request-block__form-input" placeholder="Ваш телефон:" required>
-				<button class="button form__button request-block__form-button">Заказать ремонт</button>
-				<div class="form__footnote">
-					Нажимая на кнопку "Заказать ремонт" я соглашаюсь с
-					<a href="#" class="form__footnote-link">политикой <span class="line-break"></span> обработки персональных данных</a>
-				</div>
-			</form>
-
-			<picture>
-				<source srcset="./assets/images/webp/request-man_2.webp" type="image/webp">
-				<img src="./assets/images/request-man_2.png" alt="Инженер" class="request-block__img">
-			</picture>
+<section class="request-block request-block_top">
+	<div class="container request-block__wrap">
+		<div class="request-block__suptitle">Выезд мастера</div>
+		<h3 class="text_underline text_capitalize request-block__title">Бесплатно</h3>
+		<div class="request-block__subtitle">
+			Оставьте заявку и назначте удобное для
+			<span class="line-break">Вас время и место</span>
 		</div>
+		<form action="" class="form request-block__form">
+			<input type="text" name="user_phone" class="form__input request-block__form-input" placeholder="Ваш телефон:" required>
+			<button class="button form__button request-block__form-button">Заказать ремонт</button>
+			<div class="form__footnote">
+				Нажимая на кнопку "Заказать ремонт" я соглашаюсь с
+				<a href="#" class="form__footnote-link">политикой <span class="line-break"></span> обработки персональных данных</a>
+			</div>
+		</form>
+
 		<picture>
-			<source srcset="./assets/images/webp/advantage-block_bg-1.webp" type="image/webp">
-			<img src="./assets/images/advantage-block_bg-1.jpg" alt="Ремонт стиральных машин в СПб" class="request-block__bg">
+			<source srcset="./assets/images/webp/request-man_2.webp" type="image/webp">
+			<img src="./assets/images/request-man_2.png" alt="Инженер" class="request-block__img">
 		</picture>
-	</section>
+	</div>
+	<picture>
+		<source srcset="./assets/images/webp/advantage-block_bg-1.webp" type="image/webp">
+		<img src="./assets/images/advantage-block_bg-1.jpg" alt="Ремонт стиральных машин в СПб" class="request-block__bg">
+	</picture>
+</section>
+
+<section class="steps">
+	<!--	<div class="steps__bg"></div>-->
 
 	<div class="container steps__wrap">
 		<h2 class="section__title">Как происходит ремонт</h2>
-		<div class="steps__blocks">
-			<div class="steps__block">
-				<svg class="steps__block-icon">
-					<use xlink:href="./assets/stack/sprite.svg#delivery"></use>
-				</svg>
-				<div class="steps__block-text">
-					Вы оставляете заявку на вызов мастера на нашем сайте
+		<div class="steps__nav">
+			<button class="steps__nav-button">Заявка</button>
+			<button class="steps__nav-button">Диагностика</button>
+			<button class="steps__nav-button steps__nav-button_active">Ремонт</button>
+			<button class="steps__nav-button">Гарантия</button>
+		</div>
+
+		<div class="steps__row">
+			<div class="steps__col steps__graphics">
+				<picture>
+					<source srcset="./assets/images/webp/washing-machine.webp" type="image/webp">
+					<img class="steps__img" src="./assets/images/washing-machine.jpg" alt="Стиральная машина">
+				</picture>
+				<div class="steps__icon-wrap">
+					<svg class="steps__icon">
+						<use xlink:href="./assets/stack/sprite.svg#delivery"></use>
+					</svg>
+					<svg class="steps__icon steps__icon_visible">
+						<use xlink:href="./assets/stack/sprite.svg#washing-machine"></use>
+					</svg>
+					<svg class="steps__icon">
+						<use xlink:href="./assets/stack/sprite.svg#wrench"></use>
+					</svg>
+					<svg class="steps__icon">
+						<use xlink:href="./assets/stack/sprite.svg#warranty"></use>
+					</svg>
 				</div>
-				<svg class="steps__block-arrow">
-					<use xlink:href="./assets/stack/sprite.svg#right-drawn-arrow"></use>
-				</svg>
 			</div>
-			<div class="steps__block">
-				<svg class="steps__block-icon">
-					<use xlink:href="./assets/stack/sprite.svg#washing-machine"></use>
-				</svg>
-				<div class="steps__block-text">
-					Приехавший к вам мастер проводит бесплатную диагностику для определения неисправности.
+			<div class="steps__col steps__info">
+				<div class="steps__info-blocks">
+					<div class="steps__info-block">
+						<div class="steps__icon-wrap steps__info-block-icon">
+							<svg class="steps__icon steps__icon_visible">
+								<use xlink:href="./assets/stack/sprite.svg#washing-machine"></use>
+							</svg>
+						</div>
+						<h5 class="steps__info-block-title">Гарантия на проведённый ремонт</h5>
+						<p class="steps__info-block-text">
+							После завершения ремонта наш мастер выдаст Вам весь пакет документов, а также пожизненную гарантию на услуги
+							сервисного центра <?= $brand_name?>
+						</p>
+					</div>
 				</div>
-				<svg class="steps__block-arrow">
-					<use xlink:href="./assets/stack/sprite.svg#right-drawn-arrow"></use>
-				</svg>
-			</div>
-			<div class="steps__block">
-				<svg class="steps__block-icon">
-					<use xlink:href="./assets/stack/sprite.svg#wrench"></use>
-				</svg>
-				<div class="steps__block-text">
-					После окончания диагностики вы согласовываете ремонт и мастер приступает к ремонту.
+				<div class="steps__info-contacts">
+					<button class="button steps__info-button">Вызвать мастера</button>
+					<a href="tel:<?=$phone_link?>" class="steps__info-phone">
+						<span class="steps__info-phone-label">или позвоните нам:</span>
+						<?= $phone_format?>
+					</a>
 				</div>
-				<svg class="steps__block-arrow">
-					<use xlink:href="./assets/stack/sprite.svg#right-drawn-arrow"></use>
-				</svg>
-			</div>
-			<div class="steps__block">
-				<svg class="steps__block-icon">
-					<use xlink:href="./assets/stack/sprite.svg#warranty"></use>
-				</svg>
-				<div class="steps__block-text">
-					По окончании всех работ мастер выдаст вам договор и гарантийный талон, сроком на 2 года
-				</div>
+				<div class="steps__info-footnote">Мы работаем с 8:00 до 23:00 без выходных</div>
 			</div>
 		</div>
 	</div>
@@ -596,7 +606,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					<svg class="contacts__list-item-icon">
 						<use xlink:href="./assets/stack/sprite.svg#phone"></use>
 					</svg>
-					<a href="tel: <?= $phone_link?>" class="contacts__list-item-link"><?= $phone_format ?></a>
+					<a href="tel: <?= $phone_link ?>" class="contacts__list-item-link"><?= $phone_format ?></a>
 				</div>
 			</div>
 			<div class="contacts__list-item">
@@ -637,14 +647,14 @@ require_once(__DIR__ . '/assets/configs/config.php');
 </section>
 
 <script>
-	setTimeout(() => {
+    setTimeout(() => {
         let elem = document.createElement('script');
 
         elem.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=init';
         document.getElementsByTagName('body')[0].appendChild(elem);
     }, 2500);
 
-	function init(){
+    function init() {
         // Создание карты.
         var myMap = new ymaps.Map("map", {
             // Координаты центра карты.
