@@ -1,60 +1,152 @@
 .steps {
+  padding: 60px 0;
+  overflow: hidden;
   position: relative;
-  padding-bottom: 80px;
-  &__bg {
+  background-color: $alt-bg-color;
+  &__nav {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    &-button {
+      padding: 13px 25px;
+      font-size: 18px;
+      font-weight: 600;
+      color: $inactive-color;
+      background-color: transparent;
+      border-bottom: 2px solid $inactive-color;
+      transition: .2s;
+      &:hover {
+        color: $active-color;
+      }
+      &_active {
+        color: $active-color;
+        border-color: $active-color;
+      }
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__graphics {
+    width: 40%;
+    position: relative;
+  }
+  &__img {
+    width: 360px;
     position: absolute;
-    top: -270px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-color: $accent-bg-color;
-    clip-path: polygon(0 6%, 100% 0%, 100% 100%, 0% 100%);
+    bottom: -270px;
   }
-  &__wrap {
-    margin-top: 200px;
-  }
-  &__block {
-    &s {
-      display: flex;
-      justify-content: space-between;
+  &__icon {
+    &-wrap {
+      position: absolute;
+      top: 20px;
+      right: 50px;
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      -webkit-border-radius: 200px;
+      -moz-border-radius: 200px;
+      border-radius: 200px;
+      -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+      -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
     }
 
-    position: relative;
-    width: 23%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    &:not(:last-child) {
-      margin-right: 2%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+    &:hover {
+      fill: $active-color;
     }
-    &-icon {
-      width: 50px;
-      height: 50px;
-      min-width: 50px;
-      min-height: 50px;
-      margin-bottom: 10px;
+    &_visible {
+      display: block;
     }
-    &-text {
-      font-size: 16px;
-      text-align: center;
-    }
-    &-arrow {
-      position: absolute;
-      top: -20px;
-      right: -60px;
-      width: 80px;
-      height: 80px;
-    }
-    &:nth-child(2) {
-      .steps {
-        &__block {
-          &-arrow {
-            top: -25px;
-            transform: scale(1, -1);
-          }
+  }
+  &__info {
+    width: 60%;
+    &-block {
+      position: relative;
+      margin-bottom: 60px;
+      &-icon {
+        display: none;
+        width: 80px;
+        height: 80px;
+        svg {
+          width: 45px;
+          height: 45px;
+          min-height: 45px;
+          min-width: 45px;
         }
       }
+      &-title {
+        margin-top:0;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      &-text {
+        position: relative;
+        font-size: 16px;
+        &:after {
+          position: absolute;
+          content: '';
+          left: 0;
+          bottom: -30px;
+          width: 60px;
+          height: 2px;
+          background-color: $inactive-color;
+        }
+      }
+    }
+    &-contacts {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    &-button {
+      margin-right: 20px;
+      font-size: 22px;
+    }
+    &-phone {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      font-size: 22px;
+      font-weight: 600;
+      color: $main-text-color;
+      text-decoration: none;
+      &-label {
+        font-size: 16px;
+        font-weight: 300;
+      }
+      &:after {
+        position: absolute;
+        content: '';
+        bottom: 0px;
+        right: 0;
+        left: auto;
+        width: 0;
+        height: 2px;
+        background-color: $active-color;
+        transition: .2s;
+      }
+      &:hover:after {
+        right: auto;
+        left: 0;
+        width: 100%;
+      }
+    }
+    &-footnote {
+      font-size: 14px;
+      font-weight: 300;
     }
   }
 }

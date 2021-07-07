@@ -14,7 +14,8 @@
         -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.15);
         box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.15);
         &_top {
-            top: -420px;
+            position: relative;
+            top: unset;
             bottom: unset;
             .request {
                 &-block {

@@ -9,6 +9,7 @@
     }
   }
 }
+
 @media (max-width: 1200px) {
   .header {
     &__logo {
@@ -92,6 +93,19 @@
     }
     &__block {
       max-width: 930px;
+    }
+  }
+  .steps {
+    &__graphics {
+      width: 45%;
+    }
+    &__icon {
+      &-wrap {
+        right: 30px;
+      }
+    }
+    &__info {
+      width: 55%;
     }
   }
   .contacts {
@@ -313,23 +327,53 @@
     }
   }
   .steps {
-    &__block {
-      &-arrow {
-        top: -10px;
-        right: -50px;
-        width: 70px;
-        height: 70px;
+    &__row {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__info, &__graphics {
+      width: 100%;
+    }
+    &__img {
+      z-index: 0;
+      bottom: -360px;
+      left: 50%;
+      filter: opacity(0.4) saturate(0.7);
+      transform: translateX(-50%);
+    }
+    &__icon {
+      &-wrap {
+        display: none;
       }
-      &:nth-child(2) {
-      .steps {
-        &__block {
-          &-arrow {
-            top: -15px;
-            transform: scale(1, -1);
+    }
+    &__info {
+      margin-bottom: 0px;
+      z-index: 1;
+      order: -1;
+      &-block {
+        &-icon {
+          margin: 0 auto 15px auto;
+          position: relative;
+          top: unset;
+          right: unset;
+          display: block;
+        }
+        &-title, &-text {
+          text-align: center;
+        }
+        &-text {
+          &:after {
+            left: 50%;
+            transform: translateX(-50%);
           }
         }
       }
-    }
+      &-contacts {
+        justify-content: center;
+      }
+      &-footnote {
+        text-align: center;
+      }
     }
   }
   .contacts {
@@ -545,32 +589,6 @@
       width: 15%;
     }
   }
-  .steps {
-    &__block {
-      &s {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      width: 100%;
-      flex-direction: row;
-      align-items: center;
-      &-icon {
-        margin-right: 20px;
-        margin-bottom: 0;
-      }
-      &-text {
-        text-align: left;
-        width: fit-content;
-      }
-      &-arrow {
-        display: none;
-      }
-      &:not(:last-child) {
-        margin-bottom: 35px;
-      }
-    }
-  }
   .contacts {
     &__list {
       padding: 30px;
@@ -695,9 +713,6 @@
   .request {
     &-block {
       max-width: 95%;
-      &_top {
-        top: -480px;
-      }
       .form {
         display: flex;
         flex-direction: column;
@@ -788,6 +803,25 @@
       }
     }
   }
+  .steps {
+    &__nav {
+      flex-wrap: wrap;
+    }
+    &__info {
+      &-contacts {
+        flex-direction: column;
+        align-items: center;
+      }
+      &-button {
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
+      &-phone {
+        font-size: 26px;
+        text-align: center;
+      }
+    }
+  }
   .contacts {
     &__promo {
       &-text {
@@ -812,9 +846,6 @@
   .request {
     &-block {
       padding: 30px 0 25px;
-      &_top {
-        top: -450px;
-      }
     }
   }
   .codes {
@@ -836,19 +867,6 @@
     }
     &__btn {
       display: none;
-    }
-  }
-  .steps {
-    &__block {
-      flex-direction: column;
-      align-items: center;
-      &-icon {
-        margin-right: 0;
-        margin-bottom: 5px;
-      }
-      &-text {
-        text-align: center;
-      }
     }
   }
   .contacts {
@@ -883,6 +901,15 @@
   .codes {
     &__modal {
       padding: 15px 10px;
+    }
+  }
+  .steps {
+    &__nav {
+      margin-bottom: 40px;
+      &-button {
+        padding: 15px 10px;
+        width: 50%;
+      }
     }
   }
 }
@@ -949,7 +976,6 @@
     &-block {
       bottom: -220px;
       &_top {
-        top: -480px;
         bottom: unset;
       }
     }
