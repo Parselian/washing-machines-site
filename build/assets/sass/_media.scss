@@ -53,7 +53,7 @@
   }
   .pricelist {
     &__card {
-      padding: 20px 15px;
+      padding: 15px;
     }
   }
   .reviews {
@@ -187,7 +187,7 @@
   }
   .pricelist {
     &__card {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       width: 32%;
       &:not(:nth-child(4n)) {
         margin-right: unset;
@@ -522,9 +522,19 @@
         width: 100%;
         justify-content: space-between;
         display: flex;
+        align-items: center;
       }
       &-title {
         margin-bottom: 0;
+      }
+      &-servicetime {
+        position: absolute;
+        bottom: 14px;
+        right: 20px;
+        margin-bottom: 0;
+      }
+      &-price {
+        margin-bottom: 20px;
       }
       &:hover {
         border-color: $inactive-color;
@@ -625,10 +635,10 @@
       display: block;
     }
     &__billings {
-      max-width: 170px;
+      max-width: 140px;
       &-icon {
-        width: 79px;
-        height: 50px;
+        width: 63px;
+        height: 40px;
         &:nth-child(-n+2) {
           margin-bottom: 0px;
         }
@@ -637,7 +647,8 @@
     &__nav {
       margin: 40px auto;
       width: 70%;
-      display: flex;
+      //display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
@@ -654,6 +665,7 @@
       }
     }
     &__contacts {
+      margin-top: 40px;
       flex-direction: row-reverse;
       justify-content: center;
       width: 100%;
@@ -909,6 +921,7 @@
     &__wrap {
       flex-direction: column;
       align-items: center;
+      margin-bottom: 10px;
     }
     &__logo {
       margin-bottom: 0;
@@ -935,7 +948,7 @@
       }
     }
     &__contacts {
-      margin-bottom: 30px;
+      margin-bottom: 60px;
       flex-direction: column-reverse;
       &-callback {
         margin-right: 0;
@@ -1090,6 +1103,12 @@
       }
     }
   }
+  .steps {
+    &__img {
+      bottom: -330px;
+      max-width: 320px;
+    }
+  }
   .contacts {
     &__promo {
       padding: 25px 15px 40px;
@@ -1123,6 +1142,13 @@
   .promo {
     &__title {
       font-size: 29px;
+    }
+  }
+  .pricelist {
+    &__card {
+      &-title {
+        width: 50%;
+      }
     }
   }
   .request {

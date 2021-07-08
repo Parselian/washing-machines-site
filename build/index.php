@@ -9,7 +9,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="./assets/css/reset.css">
 	<link rel="stylesheet" href="./assets/css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/style.css?<?= time();?>">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -163,7 +163,13 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</svg>
 					<div class="pricelist__card-info">
 						<div class="pricelist__card-title">Пачкает вещи</div>
-						<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						<div class="pricelist__card-servicetime">
+							<svg class="pricelist__card-servicetime-icon">
+								<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+							</svg>
+							20 мин — 1 час
+						</div>
+						<div class="pricelist__card-price">От <span class="text_accent text_semibold">500 руб.</span></div>
 					</div>
 				</div>
 				<div class="pricelist__card">
@@ -172,16 +178,13 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</svg>
 					<div class="pricelist__card-info">
 						<div class="pricelist__card-title">Пачкает вещи</div>
-						<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
-					</div>
-				</div>
-				<div class="pricelist__card pricelist__card_active">
-					<svg class="pricelist__card-icon">
-						<use xlink:href="./assets/stack/sprite.svg#dirty-clothes"></use>
-					</svg>
-					<div class="pricelist__card-info">
-						<div class="pricelist__card-title">Пачкает вещи</div>
-						<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						<div class="pricelist__card-servicetime">
+							<svg class="pricelist__card-servicetime-icon">
+								<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+							</svg>
+							20 мин — 1 час
+						</div>
+						<div class="pricelist__card-price">От <span class="text_accent text_semibold">500 руб.</span></div>
 					</div>
 				</div>
 				<div class="pricelist__card">
@@ -190,7 +193,13 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</svg>
 					<div class="pricelist__card-info">
 						<div class="pricelist__card-title">Пачкает вещи</div>
-						<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						<div class="pricelist__card-servicetime">
+							<svg class="pricelist__card-servicetime-icon">
+								<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+							</svg>
+							20 мин — 1 час
+						</div>
+						<div class="pricelist__card-price">От <span class="text_accent text_semibold">500 руб.</span></div>
 					</div>
 				</div>
 				<div class="pricelist__card">
@@ -199,7 +208,13 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</svg>
 					<div class="pricelist__card-info">
 						<div class="pricelist__card-title">Пачкает вещи</div>
-						<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						<div class="pricelist__card-servicetime">
+							<svg class="pricelist__card-servicetime-icon">
+								<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+							</svg>
+							20 мин — 1 час
+						</div>
+						<div class="pricelist__card-price">От <span class="text_accent text_semibold">500 руб.</span></div>
 					</div>
 				</div>
 				<div class="pricelist__card">
@@ -208,7 +223,13 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</svg>
 					<div class="pricelist__card-info">
 						<div class="pricelist__card-title">Пачкает вещи</div>
-						<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						<div class="pricelist__card-servicetime">
+							<svg class="pricelist__card-servicetime-icon">
+								<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+							</svg>
+							20 мин — 1 час
+						</div>
+						<div class="pricelist__card-price">От <span class="text_accent text_semibold">500 руб.</span></div>
 					</div>
 				</div>
 				<div class="pricelist__card">
@@ -217,7 +238,13 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</svg>
 					<div class="pricelist__card-info">
 						<div class="pricelist__card-title">Пачкает вещи</div>
-						<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						<div class="pricelist__card-servicetime">
+							<svg class="pricelist__card-servicetime-icon">
+								<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+							</svg>
+							20 мин — 1 час
+						</div>
+						<div class="pricelist__card-price">От <span class="text_accent text_semibold">500 руб.</span></div>
 					</div>
 				</div>
 				<div class="pricelist__card">
@@ -226,7 +253,13 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</svg>
 					<div class="pricelist__card-info">
 						<div class="pricelist__card-title">Пачкает вещи</div>
-						<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						<div class="pricelist__card-servicetime">
+							<svg class="pricelist__card-servicetime-icon">
+								<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+							</svg>
+							20 мин — 1 час
+						</div>
+						<div class="pricelist__card-price">От <span class="text_accent text_semibold">500 руб.</span></div>
 					</div>
 				</div>
 				<div class="pricelist__card">
@@ -235,7 +268,13 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</svg>
 					<div class="pricelist__card-info">
 						<div class="pricelist__card-title">Пачкает вещи</div>
-						<div class="pricelist__card-price">От <span class="semibold">500 руб.</span></div>
+						<div class="pricelist__card-servicetime">
+							<svg class="pricelist__card-servicetime-icon">
+								<use xlink:href="./assets/stack/sprite.svg#clock"></use>
+							</svg>
+							20 мин — 1 час
+						</div>
+						<div class="pricelist__card-price">От <span class="text_accent text_semibold">500 руб.</span></div>
 					</div>
 				</div>
 			</div>
