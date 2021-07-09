@@ -1,5 +1,19 @@
 .contacts {
+  position: relative;
   padding: 80px 0;
+  &__wrap {
+    position: relative;
+  }
+  &__bg {
+    &-img {
+      position: absolute;
+      z-index: -1;
+      bottom: 0px;
+      right: -100px;
+      width: 800px;
+      filter: saturate(0) opacity(0.3);
+    }
+  }
   &__list {
     margin-bottom: 40px;
     display: flex;

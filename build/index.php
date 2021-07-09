@@ -1,5 +1,28 @@
 <?php
 require_once(__DIR__ . '/assets/configs/config.php');
+require_once(__DIR__ . '/assets/configs/db-cfg.php');
+
+$brands = [];
+$error_codes = [];
+$error_info_blocks = [];
+$get_errors_info = mysqli_query($connect, 'SELECT * FROM errors_info');
+$get_brands = mysqli_query($connect, 'SELECT * FROM brands');
+
+while ($brand = $get_brands->fetch_assoc()) {
+    array_push($brands, ['BRAND_URL' => $brand['BRAND_URL'], 'BRAND_NAME' => $brand['BRAND_NAME']]);
+}
+
+while ($info_block = $get_errors_info->fetch_assoc()) {
+    array_push($error_codes, ['BRAND_URL' => $info_block['BRAND_URL'], 'ERROR_CODE' => $info_block['ERROR_CODE']]);
+    array_push($error_info_blocks, [
+        'BRAND_URL' => $info_block['BRAND_URL'],
+        'ERROR_CODE' => $info_block['ERROR_CODE'],
+        'ERROR_TITLE' => $info_block['ERROR_TITLE'],
+        'ERROR_DESCR' => $info_block['ERROR_DESCR'],
+        'PRICE' => $info_block['PRICE']
+    ]);
+}
+mysqli_close($connect);
 ?>
 <!doctype html>
 <html lang="ru">
@@ -9,7 +32,13 @@ require_once(__DIR__ . '/assets/configs/config.php');
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="./assets/css/reset.css">
 	<link rel="stylesheet" href="./assets/css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="./assets/css/style.css?<?= time();?>">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+		  integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+		  crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+		  integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+		  crossorigin="anonymous" referrerpolicy="no-referrer"/>
+	<link rel="stylesheet" href="./assets/css/style.css?<?= time(); ?>">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +46,8 @@ require_once(__DIR__ . '/assets/configs/config.php');
 	<title>Document</title>
 </head>
 <body>
+
+
 <header class="header">
 	<div class="container header__wrap">
 		<div class="header__logo">
@@ -58,12 +89,27 @@ require_once(__DIR__ . '/assets/configs/config.php');
 						Вызвать мастера
 					</span>
 			</button>
-			<div class="burger-btn is-active" id="hamburger-1">
+			<div class="burger-btn" id="hamburger-1">
 				<span class="line"></span>
 				<span class="line"></span>
 				<span class="line"></span>
 			</div>
 		</div>
+	</div>
+	<div class="burger-menu">
+		<nav class="burger-menu__nav">
+			<a href="#" class="burger-menu__nav-link">Цены</a>
+			<a href="#" class="burger-menu__nav-link">Преимущества</a>
+			<a href="#" class="burger-menu__nav-link">Отзывы</a>
+			<a href="#" class="burger-menu__nav-link">Контакты</a>
+		</nav>
+		<a href="tel:<?= $phone_link ?>" class="burger-menu__phone">
+			<svg class="burger-menu__phone-icon">
+				<use xlink:href="./assets/stack/sprite.svg#phone"></use>
+			</svg>
+            <?= $phone_format ?>
+		</a>
+		<button class="button burger-menu__button">Заказать ремонт</button>
 	</div>
 </header>
 
@@ -299,12 +345,6 @@ require_once(__DIR__ . '/assets/configs/config.php');
 		<h2 class="section__title">Что говорят о нас наши клиенты</h2>
 
 		<div class="reviews__slider">
-			<div class="reviews__slider-arrow-wrap reviews__slider-arrow_left">
-				<svg class="reviews__slider-arrow">
-					<use xlink:href="./assets/stack/sprite.svg#arrow"></use>
-				</svg>
-			</div>
-
 			<div class="reviews__slide">
 				<div class="reviews__slide-person">
 					<picture>
@@ -346,22 +386,98 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</div>
 				</div>
 			</div>
-
-			<div class="reviews__slider-arrow-wrap reviews__slider-arrow_right">
-				<svg class="reviews__slider-arrow">
-					<use xlink:href="./assets/stack/sprite.svg#arrow"></use>
-				</svg>
+			<div class="reviews__slide">
+				<div class="reviews__slide-person">
+					<picture>
+						<source srcset="./assets/images/webp/reviewer.webp" type="image/webp">
+						<img src="./assets/images/reviewer.jpg" alt="Клиент сервисного центра" class="reviews__slide-person-img">
+					</picture>
+					<div class="reviews__slide-person-col">
+						<h3 class="reviews__slide-person-name">Валентин К.</h3>
+						<div class="reviews__slide-person-service">
+							Замена подшипников
+						</div>
+					</div>
+					<div class="reviews__slide-person-rating">
+						<div class="reviews__slide-person-rating-text">Рейтинг:</div>
+						<span class="reviews__slide-person-rating-number">4.7</span>
+					</div>
+				</div>
+				<div class="reviews__slide-info">
+					<p class="reviews__slide-info-text">
+						Вышли из строя подшипники барабана, люфт. Разобрали стиральную машину. Сняли бак и барабан. Выпресовали и поменяли
+						подшипники.
+					</p>
+					<div class="reviews__slide-info-gallery">
+						<picture>
+							<source srcset="./assets/images/webp/review-gallery-img.webp" type="image/webp">
+							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб"
+								 class="reviews__slide-info-gallery-img">
+						</picture>
+						<picture>
+							<source srcset="./assets/images/webp/review-gallery-img.webp" type="image/webp">
+							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб"
+								 class="reviews__slide-info-gallery-img">
+						</picture>
+						<picture>
+							<source srcset="./assets/images/webp/review-gallery-img.webp" type="image/webp">
+							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб"
+								 class="reviews__slide-info-gallery-img">
+						</picture>
+					</div>
+				</div>
+			</div>
+			<div class="reviews__slide">
+				<div class="reviews__slide-person">
+					<picture>
+						<source srcset="./assets/images/webp/reviewer.webp" type="image/webp">
+						<img src="./assets/images/reviewer.jpg" alt="Клиент сервисного центра" class="reviews__slide-person-img">
+					</picture>
+					<div class="reviews__slide-person-col">
+						<h3 class="reviews__slide-person-name">Валентин К.</h3>
+						<div class="reviews__slide-person-service">
+							Замена подшипников
+						</div>
+					</div>
+					<div class="reviews__slide-person-rating">
+						<div class="reviews__slide-person-rating-text">Рейтинг:</div>
+						<span class="reviews__slide-person-rating-number">4.7</span>
+					</div>
+				</div>
+				<div class="reviews__slide-info">
+					<p class="reviews__slide-info-text">
+						Вышли из строя подшипники барабана, люфт. Разобрали стиральную машину. Сняли бак и барабан. Выпресовали и поменяли
+						подшипники.
+					</p>
+					<div class="reviews__slide-info-gallery">
+						<picture>
+							<source srcset="./assets/images/webp/review-gallery-img.webp" type="image/webp">
+							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб"
+								 class="reviews__slide-info-gallery-img">
+						</picture>
+						<picture>
+							<source srcset="./assets/images/webp/review-gallery-img.webp" type="image/webp">
+							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб"
+								 class="reviews__slide-info-gallery-img">
+						</picture>
+						<picture>
+							<source srcset="./assets/images/webp/review-gallery-img.webp" type="image/webp">
+							<img src="./assets/images/review-gallery-img.jpg" alt="Ремонт стиральных машин в СПб"
+								 class="reviews__slide-info-gallery-img">
+						</picture>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<ul class="reviews__slider-dots">
-			<li class="reviews__slider-dots-item"></li>
-			<li class="reviews__slider-dots-item"></li>
-			<li class="reviews__slider-dots-item reviews__slider-dots-item_active"></li>
-			<li class="reviews__slider-dots-item"></li>
-			<li class="reviews__slider-dots-item"></li>
-			<li class="reviews__slider-dots-item"></li>
-		</ul>
+		<!--		<ul class="reviews__slider-dots">-->
+		<!--			<li class="reviews__slider-dots-item"></li>-->
+		<!--			<li class="reviews__slider-dots-item"></li>-->
+		<!--			<li class="reviews__slider-dots-item reviews__slider-dots-item_active"></li>-->
+		<!--			<li class="reviews__slider-dots-item"></li>-->
+		<!--			<li class="reviews__slider-dots-item"></li>-->
+		<!--			<li class="reviews__slider-dots-item"></li>-->
+		<!--		</ul>-->
 	</div>
 
 	<section class="request-block">
@@ -487,62 +603,100 @@ require_once(__DIR__ . '/assets/configs/config.php');
 			<div class="codes__select-wrap">
 				<label for="codes-select-brand" class="codes__label">Какой у вас бренд:</label>
 				<select id="codes-select-brand" class="select codes__select">
-					<option value="0" disabled selected>Выберите ваш бренд</option>
-					<option value="bosch">Bosch</option>
-					<option value="ariston">Ariston</option>
-					<option value="zanussi">Zanussi</option>
-					<option value="whirlpool">Whirlpool</option>
+					<option value="0" disabled>Выберите ваш бренд</option>
+                    <?
+                    foreach ($brands as $brand) {
+						$is_selected = $brand['BRAND_URL'] === 'bosch' ? 'selected' : '';
+                        ?>
+						<option value="<?= $brand['BRAND_URL'] ?>" <?= $is_selected ?>><?= $brand['BRAND_NAME'] ?></option>
+                        <?
+                    }
+                    ?>
 				</select>
 			</div>
 			<div class="codes__select-wrap codes__select-wrap_mobile">
 				<label for="codes-select-error" class="codes__label">Какая у вас ошибка:</label>
 				<select id="codes-select-error" class="select codes__select">
 					<option value="0" disabled selected>Выберите код ошибки</option>
-					<option value="F01">F01</option>
+                    <?
+                    foreach ($error_info_blocks as $block) {
+						$is_hidden = $block['BRAND_URL'] !== 'bosch' ? 'codes__btn_hidden' : '';
+						$is_selected = $block['ERROR_CODE'] === 'F01' && $block['BRAND_URL'] == 'bosch' ? 'selected' : '';
+
+                        ?>
+						<option class="<?= $is_hidden ?> " value="<?= $block['ERROR_CODE'] ?>"
+								data-brand="<?= $block['BRAND_URL'] ?>" <?=$is_selected?>><?= $block['ERROR_CODE'] ?></option>
+                        <?
+                    }
+                    ?>
 				</select>
 			</div>
 			<div class="codes__label codes__label_desktop">Возможные коды ошибок:</div>
 			<div class="codes__btns">
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn codes__btn_active" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
-				<button class="codes__btn" value="F01">F01</button>
+                <?
+                foreach ($error_info_blocks as $block) {
+                    $is_hidden = $block['BRAND_URL'] !== 'bosch' ? 'codes__btn_hidden' : '';
+                    $is_active = $block['ERROR_CODE'] === 'F01' && $block['BRAND_URL'] == 'bosch' ? 'codes__btn_active' : '';
+                    ?>
+					<button class="codes__btn <?= $is_hidden ?> <?= $is_active ?>" value="<?= $block['ERROR_CODE'] ?>"
+							data-brand="<?= $block['BRAND_URL'] ?>">
+                        <?= $block['ERROR_CODE'] ?>
+					</button>
+                    <?
+                }
+                ?>
+
 			</div>
 		</div>
 		<div class="codes__col">
 			<div class="codes__modal">
-				<h4 class="codes__modal-title">Не происходит вращений в обратную сторону.</h4>
-				<p class="codes__modal-text">
-					Ошибка также относится к ошибкам модуля контроля. В данном случае может быть неисправно реле реверса или симистор.
-					Ошибка относится к критическим.
-				</p>
-				<div class="codes__modal-row">
-					<div class="codes__modal-price">
-						<div class="codes__modal-price-label">Ремонт:</div>
-						от <span class="text_accent codes__modal-price-amount">450 руб.</span>
+                <?
+                foreach ($error_info_blocks as $block) {
+                    ?>
+					<div class="codes__modal-slide" data-brand="<?= $block['BRAND_URL'] ?>" data-code="<?= $block['ERROR_CODE'] ?>">
+						<div class="codes__modal-info">
+							<h4 class="codes__modal-title"><?= $block['ERROR_TITLE'] ?></h4>
+							<p class="codes__modal-text"><?= $block['ERROR_DESCR'] ?></p>
+						</div>
+						<div class="codes__modal-row">
+							<div class="codes__modal-price">
+								<div class="codes__modal-price-label">Ремонт:</div>
+								от <span class="text_accent codes__modal-price-amount"><?= $block['PRICE'] ?> руб.</span>
+							</div>
+							<button class="button codes__modal-btn">Вызвать мастера</button>
+						</div>
 					</div>
-					<button class="button codes__modal-btn">Вызвать мастера</button>
-				</div>
+                    <?
+                }
+                ?>
 			</div>
 			<picture>
 				<source srcset="./assets/images/webp/washing-machine.webp" type="image/webp">
 				<img src="./assets/images/washing-machine.jpg" alt="Стиральная машина" class="codes__img">
 			</picture>
 		</div>
+	</div>
+</section>
+
+<section class="brands">
+	<div class="container">
+		<h2 class="section__title">Бренды, которые мы <span class="text_accent">ремонтируем</span></h2>
+		<div class="brands__cards">
+            <?
+            foreach ($brands as $brand) {
+                ?>
+				<div class="brands__card" data-brand="<?= $brand['BRAND_URL'] ?>">
+					<picture>
+						<source srcset="./assets/images/webp/<?= $brand['BRAND_URL'] ?>-logo.webp" type="image/webp">
+						<img src="./assets/images/<?= $brand['BRAND_URL'] ?>-logo.png" alt="Логотип" class="brands__card-img">
+					</picture>
+				</div>
+                <?
+            }
+            ?>
+		</div>
+
+		<button class="button brands__more">Показать всё</button>
 	</div>
 </section>
 
@@ -580,10 +734,10 @@ require_once(__DIR__ . '/assets/configs/config.php');
 	<div class="container steps__wrap">
 		<h2 class="section__title">Как происходит ремонт</h2>
 		<div class="steps__nav">
-			<button class="steps__nav-button">Заявка</button>
-			<button class="steps__nav-button">Диагностика</button>
-			<button class="steps__nav-button steps__nav-button_active">Ремонт</button>
-			<button class="steps__nav-button">Гарантия</button>
+			<button class="steps__nav-button steps__nav-button_active" data-slide="0">Заявка</button>
+			<button class="steps__nav-button" data-slide="1">Диагностика</button>
+			<button class="steps__nav-button" data-slide="2">Ремонт</button>
+			<button class="steps__nav-button" data-slide="3">Гарантия</button>
 		</div>
 
 		<div class="steps__row">
@@ -612,10 +766,46 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					<div class="steps__info-block">
 						<div class="steps__icon-wrap steps__info-block-icon">
 							<svg class="steps__icon steps__icon_visible">
+								<use xlink:href="./assets/stack/sprite.svg#delivery"></use>
+							</svg>
+						</div>
+						<h5 class="steps__info-block-title">Гарантия на проведённый ремонт 0</h5>
+						<p class="steps__info-block-text">
+							После завершения ремонта наш мастер выдаст Вам весь пакет документов, а также пожизненную гарантию на услуги
+							сервисного центра <?= $brand_name ?>
+						</p>
+					</div>
+					<div class="steps__info-block">
+						<div class="steps__icon-wrap steps__info-block-icon">
+							<svg class="steps__icon steps__icon_visible">
 								<use xlink:href="./assets/stack/sprite.svg#washing-machine"></use>
 							</svg>
 						</div>
-						<h5 class="steps__info-block-title">Гарантия на проведённый ремонт</h5>
+						<h5 class="steps__info-block-title">Гарантия на проведённый ремонт 1</h5>
+						<p class="steps__info-block-text">
+							После завершения ремонта наш мастер выдаст Вам весь пакет документов, а также пожизненную гарантию на услуги
+							сервисного центра <?= $brand_name ?>
+						</p>
+					</div>
+					<div class="steps__info-block">
+						<div class="steps__icon-wrap steps__info-block-icon">
+							<svg class="steps__icon steps__icon_visible">
+								<use xlink:href="./assets/stack/sprite.svg#wrench"></use>
+							</svg>
+						</div>
+						<h5 class="steps__info-block-title">Гарантия на проведённый ремонт 2</h5>
+						<p class="steps__info-block-text">
+							После завершения ремонта наш мастер выдаст Вам весь пакет документов, а также пожизненную гарантию на услуги
+							сервисного центра <?= $brand_name ?>
+						</p>
+					</div>
+					<div class="steps__info-block">
+						<div class="steps__icon-wrap steps__info-block-icon">
+							<svg class="steps__icon steps__icon_visible">
+								<use xlink:href="./assets/stack/sprite.svg#warranty"></use>
+							</svg>
+						</div>
+						<h5 class="steps__info-block-title">Гарантия на проведённый ремонт 3</h5>
 						<p class="steps__info-block-text">
 							После завершения ремонта наш мастер выдаст Вам весь пакет документов, а также пожизненную гарантию на услуги
 							сервисного центра <?= $brand_name ?>
@@ -630,6 +820,65 @@ require_once(__DIR__ . '/assets/configs/config.php');
 					</a>
 				</div>
 				<div class="steps__info-footnote">Мы работаем с 8:00 до 23:00 без выходных</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="faq">
+	<div class="container wrapper">
+		<h3 class="section__title">
+			<!-- Частые вопросы <b>itFixed</b> -->
+			Часто задаваемые вопросы
+		</h3>
+		<div class="faq__list">
+			<div class="faq__list_item">
+				<div class="faq__item_row faq__item_question">
+					<div class="faq__row_left">Вопрос:</div>
+					<div class="faq__row_center">Выезд мастера бесплатный?</div>
+					<div class="faq__row_right">
+						<div class="faq__right_arrow faq__right_arrow-up faq__right_arrow_rotated"></div>
+					</div>
+				</div>
+				<div class="faq__item_row faq__item_answer faq__list_item_close" style="display: none;">
+					<div class="faq__row_left">Ответ:</div>
+					<div class="faq__row_center">Да, в пределах КАД. Если нужно вызвать сервис-инженера за пределы КАД – позвоните по
+						телефону <a href="tel:+78124391517" class="bold nowrap">+7 (812) 439-15-17</a>, и мы сориентируем Вас по цене.
+					</div>
+					<div class="faq__row_right"></div>
+				</div>
+			</div>
+			<div class="faq__list_item">
+				<div class="faq__item_row faq__item_question">
+					<div class="faq__row_left">Вопрос:</div>
+					<div class="faq__row_center">Какая гарантия на услуги?</div>
+					<div class="faq__row_right">
+						<div class="faq__right_arrow faq__right_arrow-up faq__right_arrow_rotated"></div>
+					</div>
+				</div>
+				<div class="faq__item_row faq__item_answer faq__list_item_close" style="display: none;">
+					<div class="faq__row_left">Ответ:</div>
+					<div class="faq__row_center">Мы предоставляем всем своим клиентам годовую гарантию на запчасти. Для более подробной
+						информации позвоните нашим специалистам по тел.:
+						<a href="tel: <?= $phone_link ?>" class="faq__list_item-link"><?= $phone_format ?></a></div>
+					<div class="faq__row_right"></div>
+				</div>
+			</div>
+			<div class="faq__list_item">
+				<div class="faq__item_row faq__item_question">
+					<div class="faq__row_left">Вопрос:</div>
+					<div class="faq__row_center">Нужно платить за диагностику, если отказываюсь от ремонта?</div>
+					<div class="faq__row_right">
+						<div class="faq__right_arrow faq__right_arrow-up"></div>
+					</div>
+				</div>
+				<div class="faq__item_row faq__item_answer">
+					<div class="faq__row_left">Ответ:</div>
+					<div class="faq__row_center">Нет, диагностика всегда бесплатная. Также не нужно оплачивать вызов сервис-инженера и выезд
+						курьера.
+					</div>
+					<div class="faq__row_right"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -682,7 +931,12 @@ require_once(__DIR__ . '/assets/configs/config.php');
 			</div>
 			<div id="map" class="contacts__map"></div>
 		</div>
+
 	</div>
+	<picture>
+		<source srcset="./assets/images/webp/contacts_bg-img.webp" type="image/webp">
+		<img src="./assets/images/contacts_bg-img.png" alt="Ремонт стиральных машин в СПб" class="contacts__bg-img">
+	</picture>
 </section>
 
 <footer class="footer">
@@ -709,7 +963,7 @@ require_once(__DIR__ . '/assets/configs/config.php');
 			</svg>
 		</div>
 		<div class="footer__col footer__nav">
-<!--			<div class="footer__nav-title">Сервисный центр</div>-->
+			<!--			<div class="footer__nav-title">Сервисный центр</div>-->
 			<a href="#features" class="footer__nav-link">Преимущества</a>
 			<a href="#prices" class="footer__nav-link">Цены</a>
 			<a href="#reviews" class="footer__nav-link">Отзывы</a>
@@ -755,12 +1009,18 @@ require_once(__DIR__ . '/assets/configs/config.php');
 		</div>
 	</div>
 	<div class="container footer__footnote">
-		Компания <?= $brand_name?>. Все права защищены. Bosch, Indesit, Zanussi, Electrolux, Whirlpool, Samsung и их логотипы являются
+		Компания <?= $brand_name ?>. Все права защищены. Bosch, Indesit, Zanussi, Electrolux, Whirlpool, Samsung и их логотипы являются
 		зарегистрированными товарными знаками. Информация опубликованная на сайте не является публичной
 		офертой, определяемой положениями Статьи 437 ГК РФ. Цены указаны за услугу, запчасти в эту стоимость не входят.
 	</div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+		integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"
+		referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+		integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"
+		referrerpolicy="no-referrer"></script>
 <script>
     setTimeout(() => {
         let elem = document.createElement('script');
@@ -783,5 +1043,6 @@ require_once(__DIR__ . '/assets/configs/config.php');
         });
     }
 </script>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>

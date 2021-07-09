@@ -3,6 +3,7 @@
   color: $alt-text-color;
   background-color: $footer-bg-color;
   &__wrap {
+    position: relative;
     margin-bottom: 30px;
     display: flex;
     align-items: flex-start;
@@ -89,9 +90,10 @@
           justify-content: flex-end;
           font-weight: 300;
           font-size: 14px;
+          opacity: 0.5;
         }
         &-text {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }

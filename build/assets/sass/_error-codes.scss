@@ -85,6 +85,9 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
     transition: .2s;
+    &_hidden {
+      display: none;
+    }
     &:hover {
       color: $active-color;
       border-color: $active-color;
